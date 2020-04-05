@@ -9,7 +9,7 @@ destination_path="bats-core"
 download_destination="${destination_root}/${destination_path}"
 
 # packages
-apt-get update || true
+apt-get update -qq || true
 apt-get install -y curl || apk add curl
 
 # download
