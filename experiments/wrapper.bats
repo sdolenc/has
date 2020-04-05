@@ -11,7 +11,7 @@ cd $BATS_TEST_DIRNAME
 
       echo "# $output" >&3
       echo "#" >&3
-      final_status+=$status
+      let "final_status += $status"
     fi
   done
 
