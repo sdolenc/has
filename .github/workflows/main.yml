@@ -1,0 +1,39 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  shellcheck:
+    name: shellcheck
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v2
+
+      - name: Run Shellcheck
+        uses: ludeeus/action-shellcheck@0.1.0
+
+  test:
+    name: tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        container:
+          - debian:buster-20200327 # 10.3
+          - debian:buster-backports
+          - debian:buster-20200327-slim # 10.3-slim
+          - ubuntu:bionic-20200311 # 18.04
+          - ubuntu:eoan-20200313 # 19.10
+          - alpine:3.11.5
+
+    container: ${{ matrix.container }}
+
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v2
+
+      - name: Run Unit Tests
+        run: |
+          bash --version | head -2
+          experiments/run_e2e_tests.sh
+        shell: bash
