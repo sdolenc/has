@@ -8,6 +8,9 @@ destination_root="/tmp"
 destination_path="bats-core"
 download_destination="${destination_root}/${destination_path}"
 
+# packages
+apt-get install -y curl || apk add curl
+
 # download
 if [ ! -d ${download_destination} ]; then
     PREVPWD=$(pwd)

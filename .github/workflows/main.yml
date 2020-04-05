@@ -24,7 +24,7 @@ jobs:
           - debian:buster-20200327-slim # 10.3-slim
           - ubuntu:bionic-20200311 # 18.04
           - ubuntu:eoan-20200313 # 19.10
-          - alpine:3.11.5
+          - bash:5.0.16 # alpine:3.11
 
     container: ${{ matrix.container }}
 
@@ -34,6 +34,5 @@ jobs:
 
       - name: Run Unit Tests
         run: |
-          command -v bash || apk add bash
           bash ./experiments/run_e2e_tests.sh
         shell: bash
