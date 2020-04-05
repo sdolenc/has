@@ -1,5 +1,7 @@
 #!/usr/bin/env bats
 
-@test "description [backend=$backend,njobs=$njobs]" {
-  echo "# Here I am with backend=$backend njobs=$njobs" >&3
+@test "install $package" {
+  command -v $package >&3 || true
+  apt-get install -y $package >&3 || apk add $package >&3
+  command -v $package >&3
 }
