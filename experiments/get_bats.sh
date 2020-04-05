@@ -16,7 +16,7 @@ if [[ ! -d ${download_destination} ]]; then
     curl -L "${test_framework}/tarball/${commit}" | tar xz
     mv "bats-core-bats-core-${commit}" "${destination_path}"
 
-    cd ${PREVPWD}
+    cd "${PREVPWD}"
 fi
 
 # install
