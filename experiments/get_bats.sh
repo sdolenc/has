@@ -10,7 +10,7 @@ download_destination="${destination_root}/${destination_path}"
 
 # packages
 apt-get update -qq || true
-apt-get install -y curl || apk add curl
+apt-get install -y -qq curl || apk add curl
 
 # download
 if [ ! -d ${download_destination} ]; then

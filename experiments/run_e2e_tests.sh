@@ -1,5 +1,5 @@
 #!/bin/bash
-set -xeuo pipefail
+set -euo pipefail
 
 pushd "$(dirname "${BASH_SOURCE[0]}")"
 
