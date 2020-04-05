@@ -9,7 +9,7 @@ destination_path="bats-core"
 download_destination="${destination_root}/${destination_path}"
 
 # download
-if [[ ! -d ${download_destination} ]]; then
+if [ ! -d ${download_destination} ]; then
     PREVPWD=$(pwd)
     cd "${destination_root}"
 
