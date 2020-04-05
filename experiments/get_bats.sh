@@ -9,8 +9,8 @@ destination_path="bats-core"
 download_destination="${destination_root}/${destination_path}"
 
 # packages
-apt-get update -qq | head -5 || true
-apt-get install -y -qq curl | head -5 || apk add curl | head -5
+apt-get update -qq > /dev/null || true
+apt-get install -y -qq curl > /dev/null || apk add curl > /dev/null
 
 # download
 if [ ! -d ${download_destination} ]; then
