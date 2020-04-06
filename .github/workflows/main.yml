@@ -32,7 +32,6 @@ jobs:
       - name: Clone Repo
         uses: actions/checkout@v2
 
-      - name: Run Unit Tests
-        run: |
-          bash ./experiments/run_e2e_tests.sh
+      - name: Run e2e Tests
+        run: bash ./tests/run_e2e_tests.sh
         shell: bash
