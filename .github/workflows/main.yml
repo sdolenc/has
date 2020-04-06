@@ -22,9 +22,9 @@ jobs:
           #- debian:buster-20200327 # 10.3
           #- debian:buster-backports
           #- debian:buster-20200327-slim # 10.3-slim
-          #- ubuntu:bionic-20200311 # 18.04
-          #- ubuntu:eoan-20200313 # 19.10
-          - bash:5.0.16 # alpine:3.11
+          - ubuntu:bionic-20200311 # 18.04
+          - ubuntu:eoan-20200313 # 19.10
+          - sdolenc/testing-has:alpine # bash:5.0.16, alpine:3.11
 
     container: ${{ matrix.container }}
 
@@ -33,5 +33,5 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run e2e Tests
-        run: echo "todo:disabled" # bash ./tests/run_e2e_tests.sh
+        run: bash ./tests/run_e2e_tests.sh
         shell: bash
