@@ -5,7 +5,7 @@ cd $BATS_TEST_DIRNAME
 @test "wrapper" {
   final_status=0
 
-  for package in $(cat list.txt); do
+  for package in $(cat packages_all.txt); do
     if [[ -n $package ]]; then
       package=$package run bats -t test.bats
 

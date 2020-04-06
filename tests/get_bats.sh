@@ -1,6 +1,8 @@
 #!/bin/sh
 set -euo pipefail
 
+# todo: move all of this to dockerfile
+
 # settings
 test_framework="https://github.com/bats-core/bats-core"
 commit="87b16eb"
@@ -9,8 +11,6 @@ destination_path="bats-core"
 download_destination="${destination_root}/${destination_path}"
 
 # packages
-# todo:draft, will move to dockerfile
-# todo:decide if you want bats in the dockerfile or jit
 if command -v apt-get 2>&1 >/dev/null; then
     apt-get update -qq && apt-get install -y -qq curl
 else
