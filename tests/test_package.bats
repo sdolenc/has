@@ -9,7 +9,7 @@ cd $BATS_TEST_DIRNAME
       apt-get install -y -qq $package | head -5 >&3
     fi
   elif command -v apk 2>&1 >/dev/null; then
-    if [[ grep -q "^$package$" packages_alpine_skip.txt ]]; then
+    if grep -q "^$package$" packages_alpine_skip.txt; then
       skip "skipping because packages_alpine_skip.txt contains $package"
     fi
   fi
