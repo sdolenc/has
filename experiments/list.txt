@@ -1,7 +1,3 @@
-grep
-gzip
-java
-python
 sed
 tar
 unzip
