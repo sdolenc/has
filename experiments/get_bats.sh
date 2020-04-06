@@ -9,8 +9,12 @@ destination_path="bats-core"
 download_destination="${destination_root}/${destination_path}"
 
 # packages
-apt-get update -qq > /dev/null || true
-apt-get install -y -qq curl > /dev/null || apk add curl > /dev/null
+# todo:draft, will move to dockerfile
+if command -v apt-get 2>&1 >/dev/null; then
+    apt-get update -qq && apt-get install -y -qq curl
+else
+    apk add curl
+fi
 
 # download
 if [ ! -d ${download_destination} ]; then
