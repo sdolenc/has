@@ -10,11 +10,13 @@ download_destination="${destination_root}/${destination_path}"
 
 # packages
 # todo:draft, will move to dockerfile
+# todo:decide if you want bats in the dockerfile or jit
 if command -v apt-get 2>&1 >/dev/null; then
     apt-get update -qq && apt-get install -y -qq curl
 else
     apk add curl
-    # apk add --no-cache ack curl
+    # already has awk bash bzip2
+    # apk add --no-cache ack curl bzr docker emacs file gcc git go gradle hugo jq make nano npm perl php pv python3 R ruby sudo tree vim yarn zip zsh
 fi
 
 # download
