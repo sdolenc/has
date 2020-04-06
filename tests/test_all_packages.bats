@@ -25,8 +25,8 @@ cd $BATS_TEST_DIRNAME
   fi
 
   # subtract skips from full list
-  run has $(egrep -v "$(cat packages_alpine_skip.txt | xargs | tr " " "|")" packages_all.txt | xargs)
+  run ../has $(egrep -v "$(cat packages_alpine_skip.txt | xargs | tr " " "|")" packages_all.txt | xargs)
   echo "$output" >&3
   echo "# status $status" >&3
-  # [ "$status" -eq 0 ]
+  [ "$status" -eq 0 ]
 }
