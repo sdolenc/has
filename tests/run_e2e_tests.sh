@@ -9,6 +9,6 @@ pushd "$(dirname "${BASH_SOURCE[0]}")"
 bash get_bats.sh
 
 # run tests
-bats -t wrapper.bats
+bats -t test_all_packages.bats
 
 popd
