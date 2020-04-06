@@ -14,6 +14,7 @@ if command -v apt-get 2>&1 >/dev/null; then
     apt-get update -qq && apt-get install -y -qq curl
 else
     apk add curl
+    # apk add --no-cache ack curl
 fi
 
 # download
