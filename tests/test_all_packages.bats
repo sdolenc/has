@@ -2,7 +2,7 @@
 
 cd $BATS_TEST_DIRNAME
 
-@test "test each package" {
+@test "test each package individually" {
   final_status=0
 
   for package in $(cat packages_all.txt); do
@@ -19,4 +19,14 @@ cd $BATS_TEST_DIRNAME
   # [ "$final_status" -eq 0 ]
 }
 
-#todo: test all packages at once
+@test "test all packages at once" {
+  if command -v apt-get 2>&1 >/dev/null; then
+    skip "todo"
+  fi
+
+  # subtract skips from full list
+  run has $(egrep -v "$(cat packages_alpine_skip.txt | xargs | tr " " "|")" packages_all.txt | xargs)
+  echo "$output" >&3
+  echo "# status $status" >&3
+  # [ "$status" -eq 0 ]
+}

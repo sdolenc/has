@@ -1,9 +1,7 @@
-# can't install on alpine
 apt
 apt-get
 aptitude
 
-# todo
 ab
 ag
 ant
