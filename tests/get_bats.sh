@@ -14,9 +14,9 @@ download_destination="${destination_root}/${destination_path}"
 if command -v apt-get 2>&1 >/dev/null; then
     apt-get update -qq && apt-get install -y -qq curl
 else
-    apk add curl
+    # apk add curl
     # already has awk bash bzip2 grep gzip sed tar unzip wget xz
-    # apk add --no-cache ack curl bzr docker emacs file gcc git go gradle hugo jq make nano npm perl php pv python python3 R ruby sudo tree vim yarn zip zsh
+    apk add --no-cache ack curl bzr docker emacs file gcc git go gradle hugo jq make nano npm perl php pv python python3 R ruby sudo tree vim yarn zip zsh
 fi
 
 # download

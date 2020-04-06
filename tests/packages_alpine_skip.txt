@@ -1,9 +1,12 @@
-ab
-ag
-ant
+# can't install on alpine
 apt
 apt-get
 aptitude
+
+# todo
+ab
+ag
+ant
 autojump
 aws
 brew
@@ -23,6 +26,7 @@ heroku
 hg
 http
 hub
+java
 javac
 kotlin
 lein
@@ -42,5 +46,3 @@ sls
 subl
 svn
 unar
-
-java
