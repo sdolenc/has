@@ -17,12 +17,14 @@ heroku
 hg
 http
 hub
+java
 javac
 kotlin
 lein
 mvn
 netlify
 netlifyctl
+node
 php5
 podman
 psql

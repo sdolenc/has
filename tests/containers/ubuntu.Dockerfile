@@ -7,7 +7,8 @@ FROM ubuntu:bionic-20200311
 #       bash
 #       bzip2
 #       grep
-#
+#       gzip
+#       perl
 #       tput
 RUN apt-get update && apt-get install -y -qq \
         ack \
@@ -32,8 +33,10 @@ RUN apt-get update && apt-get install -y -qq \
         perl6 \
         php \
         pv \
+        python \
         python3 \
         rake \
+        ruby \
         scala \
         sudo \
         tree \

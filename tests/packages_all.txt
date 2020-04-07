@@ -1,9 +1,3 @@
-gzip
-java
-node
-perl
-python
-ruby
 sed
 tar
 unzip
