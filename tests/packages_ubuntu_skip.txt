@@ -5,5 +5,7 @@ brew
 brunch
 bundle
 code
+docker
 eb
 gcloud
+gem
