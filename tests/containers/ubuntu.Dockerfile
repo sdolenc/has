@@ -6,6 +6,9 @@ FROM ubuntu:bionic-20200311
 #       awk
 #       bash
 #       bzip2
+#       grep
+#
+#       tput
 RUN apt-get update && apt-get install -y -qq \
         ack \
         ant \
@@ -18,4 +21,24 @@ RUN apt-get update && apt-get install -y -qq \
         gcc \
         git \
         gradle \
-        libncurses5-dbg `#tput`
+        groovy \
+        grunt \
+        gulp \
+        hugo \
+        jq \
+        make \
+        nano \
+        npm \
+        perl6 \
+        php \
+        pv \
+        python3 \
+        rake \
+        scala \
+        sudo \
+        tree \
+        unar \
+        vim \
+        wget \
+        yarn \
+        zsh
