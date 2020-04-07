@@ -9,6 +9,8 @@ FROM ubuntu:bionic-20200311
 #       grep
 #       gzip
 #       perl
+#       sed
+#       tar
 #       tput
 RUN apt-get update && apt-get install -y -qq \
         ack \
@@ -41,7 +43,9 @@ RUN apt-get update && apt-get install -y -qq \
         sudo \
         tree \
         unar \
+        unzip \
         vim \
         wget \
         yarn \
+        zip \
         zsh
