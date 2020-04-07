@@ -1,13 +1,3 @@
-awk
-bzip2
-docker
-file
-gem
-
-gnu_coreutils
-go
-gor
-gradle
 grep
 groovy
 grunt

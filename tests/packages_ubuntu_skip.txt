@@ -9,3 +9,6 @@ docker
 eb
 gcloud
 gem
+gnu_coreutils
+go
+gor

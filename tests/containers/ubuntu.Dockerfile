@@ -17,4 +17,5 @@ RUN apt-get update && apt-get install -y -qq \
         file \
         gcc \
         git \
+        gradle \
         libncurses5-dbg `#tput`
