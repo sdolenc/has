@@ -26,6 +26,7 @@ RUN apk add --no-cache \
         jq \
         make \
         nano \
+        ncurses `#tput` \
         npm \
         perl \
         php \
