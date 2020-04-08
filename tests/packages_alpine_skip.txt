@@ -1,7 +1,6 @@
 apt
 apt-get
 aptitude
-
 ag
 ant
 autojump

@@ -39,7 +39,7 @@ jobs:
       matrix:
         container:
           - sdolenc/testing-has:ubuntu # uses ubuntu:bionic-20200311 which is ubuntu 18.04
-          #todo: - sdolenc/testing-has:alpine # uses bash:5.0.16 which is alpine 3.11
+          - sdolenc/testing-has:alpine # uses bash:5.0.16 which is alpine 3.11
 
     container: ${{ matrix.container }}
 
