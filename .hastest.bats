@@ -20,6 +20,7 @@ teardown() {
 }
 
 @test "invoking 'has' without arguments prints usage" {
+  env >&3
   run $has
 
   [ "$status" -eq 0 ]
@@ -59,6 +60,7 @@ teardown() {
 
 @test "make update runs git fetch" {
   cd "${BATS_TEST_DIRNAME}"
+  env >&3
   skip "make update overwrites my git working tree"
   run make update
 
