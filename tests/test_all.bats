@@ -13,7 +13,6 @@ fi
   for package in $(cat packages_all.txt); do
     if [[ -n $package ]]; then
       package=$package distro=$distro run bats -t test_package.bats
-
       echo "# $output" >&3
       echo "#" >&3
       final_status=$(($final_status + $status))
@@ -28,6 +27,7 @@ fi
   # subtract skips from full list
   run ../has $(egrep -v "$(cat packages_${distro}_skip.txt | xargs | tr " " "|")" packages_all.txt | xargs)
   echo "$output" >&3
+  echo "#" >&3
 
   echo "# status $status" >&3
   [ "$status" -eq 0 ]
