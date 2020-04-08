@@ -12,7 +12,7 @@ FROM ubuntu:bionic-20200311
 #       sed
 #       tar
 #       tput
-RUN apt-get update && apt-get install -y -qq \
+RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
         ack \
         ant \
         aptitude \
@@ -48,4 +48,5 @@ RUN apt-get update && apt-get install -y -qq \
         wget \
         yarn \
         zip \
-        zsh
+        zsh \
+        && apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
