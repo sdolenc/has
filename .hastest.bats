@@ -22,13 +22,6 @@ teardown() {
 @test "invoking 'has' without arguments prints usage" {
   run $has
 
-  echo "$has" >&3
-  echo "" >&3
-  echo "$output" >&3
-  echo "" >&3
-  echo "${lines[0]}" >&3
-  echo "" >&3
-
   [ "$status" -eq 0 ]
   [ "${lines[0]%% *}" = 'has'     ]
   [ "${lines[1]%%:*}" = 'USAGE'   ]
