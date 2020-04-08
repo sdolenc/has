@@ -31,7 +31,7 @@ jobs:
       - name: unit tests
         run: |
           make install
-          make test
+          PATH="/usr/local/bin:$PATH" make test
         shell: bash
 
   testE2E:
