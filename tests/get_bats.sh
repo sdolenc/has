@@ -13,7 +13,7 @@ download_destination="${destination_root}/${destination_path}"
 # packages
 if command -v apt-get 2>&1 >/dev/null; then
     #tput, gem/docker
-    apt-get update -qq && DEBIAN_FRONTEND="noninteractive" apt-get install -y -qq curl libncurses5-dbg apt-utils
+    apt-get update -qq && DEBIAN_FRONTEND="noninteractive" apt-get install -y -qq curl apt-utils
 fi
 
 # download
