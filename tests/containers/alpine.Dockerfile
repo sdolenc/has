@@ -40,4 +40,9 @@ RUN apk add --no-cache \
         vim \
         yarn \
         zip \
-        zsh
+        zsh; \
+    \
+    commit="87b16eb"; \
+    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
+    "bats-core-bats-core-${commit}/install.sh" /usr/local && \
+    command -v bats
