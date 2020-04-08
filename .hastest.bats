@@ -64,7 +64,7 @@ teardown() {
   run make update
 
   [ "$status" -eq 0 ]
-  [ "$(echo "${output}")" | grep -q "git fetch --verbose" ]
+  [ "$(echo "${output}" | grep "git fetch --verbose")" ]
 }
 
 @test "works with single command check" {
