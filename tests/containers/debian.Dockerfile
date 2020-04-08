@@ -1,5 +1,12 @@
 FROM debian:buster-20200327-slim
 
+# already contains
+#       apt
+#       apt-get
+#       bash
+#       grep
+#       gzip
+#       tar
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
         bc \
         pv \
@@ -7,6 +14,14 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         unar \
         make \
         curl \
+        git \
+        unzip \
+        xz-utils `#xz` \
+        unar \
+        pv \
+        zip \
+        sudo \
+        file \
         && apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*; \
     \
     #bats
