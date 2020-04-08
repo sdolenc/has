@@ -29,19 +29,6 @@ teardown() {
 }
 
 @test "make install creates a valid installation" {
-  echo $GITHUB_ACTION >&3
-  echo $GITHUB_ACTIONS >&3
-  uname -a >&3
-  uname -a | grep -i "ubuntu" >&3
-  if [[ -n $GITHUB_ACTION || -n $GITHUB_ACTIONS ]]; then
-    echo "1" >&3
-    if [ "$(uname -a | grep -i "ubuntu")" ]; then
-      echo "2" >&3
-      skip "todo: this test makes other tests fail on ubuntu in CI"
-    fi
-  fi
-  echo "3" >&3
-
   INSTALL_DIR="${HAS_TMPDIR}/.local"
   cd "${BATS_TEST_DIRNAME}"
   run make PREFIX="${INSTALL_DIR}" install
@@ -59,18 +46,11 @@ teardown() {
 }
 
 @test "..even if 'has' is missing from directory" {
-  echo $GITHUB_ACTION >&3
-  echo $GITHUB_ACTIONS >&3
-  uname -a >&3
-  uname -a | grep -i "ubuntu" >&3
   if [[ -n $GITHUB_ACTION || -n $GITHUB_ACTIONS ]]; then
-    echo "1" >&3
     if [ "$(uname -a | grep -i "ubuntu")" ]; then
-      echo "2" >&3
       skip "todo: this test fails on ubuntu in CI"
     fi
   fi
-  echo "3" >&3
 
   INSTALL_DIR="${HAS_TMPDIR}/system_local"
   cd "${BATS_TEST_DIRNAME}"
@@ -83,18 +63,11 @@ teardown() {
 }
 
 @test "make update runs git fetch" {
-  echo $GITHUB_ACTION >&3
-  echo $GITHUB_ACTIONS >&3
-  uname -a >&3
-  uname -a | grep -i "ubuntu" >&3
   if [[ -n $GITHUB_ACTION || -n $GITHUB_ACTIONS ]]; then
-    echo "1" >&3
     if [ "$(uname -a | grep -i "ubuntu")" ]; then
-      echo "2" >&3
       skip "todo: this test fails on ubuntu in CI"
     fi
   fi
-  echo "3" >&3
 
   cd "${BATS_TEST_DIRNAME}"
   if [[ -z $GITHUB_ACTION || -z $GITHUB_ACTIONS ]]; then
