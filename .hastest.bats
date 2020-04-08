@@ -46,12 +46,6 @@ teardown() {
 }
 
 @test "..even if 'has' is missing from directory" {
-  if [[ -n $GITHUB_ACTION || -n $GITHUB_ACTIONS ]]; then
-    if [ "$(uname -a | grep -i "ubuntu")" ]; then
-      skip "todo: this test fails on ubuntu in CI"
-    fi
-  fi
-
   INSTALL_DIR="${HAS_TMPDIR}/system_local"
   cd "${BATS_TEST_DIRNAME}"
   mv has has-been
