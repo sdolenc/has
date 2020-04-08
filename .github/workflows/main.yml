@@ -13,8 +13,27 @@ jobs:
       - name: Run Shellcheck
         uses: ludeeus/action-shellcheck@0.1.0
 
-  test:
-    name: tests
+  tests:
+    name: unit tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        container:
+          - sdolenc/testing-has:debian # uses debian:buster-20200327-slim which is debian 10.3
+          - sdolenc/testing-has:ubuntu16 # uses ubuntu:xenial-20200212 which is ubuntu 16.04
+
+    container: ${{ matrix.container }}
+
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v2
+
+      - name: unit tests
+        run: make test
+        shell: bash
+
+  testE2E:
+    name: end-to-end tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
