@@ -3,15 +3,8 @@
 cd $BATS_TEST_DIRNAME
 
 @test "test $package" {
-  if command -v apt-get 2>&1 >/dev/null; then
-    if ! command -v $package >&3; then
-      echo "attempting to install $package" >&3
-      DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq $package >&3
-    fi
-  elif command -v apk 2>&1 >/dev/null; then
-    if grep -q "^$package$" packages_alpine_skip.txt; then
-      skip
-    fi
+  if grep -q "^$package$" packages_${distro}_skip.txt; then
+    skip
   fi
 
   # todo: fail if missing right-side version (like wget on alpine)
