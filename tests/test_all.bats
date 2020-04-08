@@ -19,7 +19,7 @@ fi
     fi
   done
 
-  echo "# status $final_status" >&3
+  echo "# status code=$final_status" >&3
   [ "$final_status" -eq 0 ]
 }
 
@@ -29,6 +29,6 @@ fi
   echo "$output" >&3
   echo "#" >&3
 
-  echo "# status $status" >&3
+  echo "# status code=$status" >&3
   [ "$status" -eq 0 ]
 }
