@@ -21,7 +21,7 @@ fi
   done
 
   echo "# status $final_status" >&3
-  # [ "$final_status" -eq 0 ]
+  [ "$final_status" -eq 0 ]
 }
 
 @test "test all packages at once" {
@@ -30,5 +30,5 @@ fi
   echo "$output" >&3
 
   echo "# status $status" >&3
-  # [ "$status" -eq 0 ]
+  [ "$status" -eq 0 ]
 }
