@@ -6,6 +6,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         xz-utils \
         unar \
         make \
+        curl \
         && apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*; \
     \
     commit="87b16eb"; \
