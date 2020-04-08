@@ -20,7 +20,6 @@ teardown() {
 }
 
 @test "invoking 'has' without arguments prints usage" {
-  env >&3
   run $has
 
   [ "$status" -eq 0 ]
@@ -47,7 +46,6 @@ teardown() {
 }
 
 @test "..even if 'has' is missing from directory" {
-  skip "todo: this breaks all susbsequent tests in CI"
   INSTALL_DIR="${HAS_TMPDIR}/system_local"
   cd "${BATS_TEST_DIRNAME}"
   mv has has-been
@@ -60,7 +58,7 @@ teardown() {
 
 @test "make update runs git fetch" {
   cd "${BATS_TEST_DIRNAME}"
-  if [[ -n $GITHUB_ACTION || -n $GITHUB_ACTIONS ]]; then
+  if [[ -z $GITHUB_ACTION || -z $GITHUB_ACTIONS ]]; then
     skip "make update overwrites my git working tree"
   fi
   run make update
@@ -171,7 +169,7 @@ teardown() {
 
 @test "testing hub version is different to git version" {
   if ! command -v hub; then
-    skip "'hub' command not found.  This passes for @virgilwashere locally."
+    skip "'hub' command not found. Installation command can be found at the bottom of ./tests/containers/debian.Dockerfile"
   fi
   run $has hub git
 
