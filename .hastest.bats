@@ -60,8 +60,9 @@ teardown() {
 
 @test "make update runs git fetch" {
   cd "${BATS_TEST_DIRNAME}"
-  env >&3
-  skip "make update overwrites my git working tree"
+  if [[ -n $GITHUB_ACTION || -n $GITHUB_ACTIONS ]]; then
+    skip "make update overwrites my git working tree"
+  fi
   run make update
 
   [ "$status" -eq 0 ]
