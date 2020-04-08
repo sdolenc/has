@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-# todo: remove tis file and call wrapper directly
+# todo: remove this file and call wrapper directly
 
 pushd "$(dirname "${BASH_SOURCE[0]}")"
 

@@ -19,9 +19,7 @@ jobs:
     strategy:
       matrix:
         container:
-          #- debian:buster-20200327 # 10.3
-          - debian:buster-20200327-slim # 10.3-slim
-          #- ubuntu:bionic-20200311 # 18.04
+          # - sdolenc/testing-has:ubuntu # ubuntu:bionic-20200311, ubuntu 18.04
           - sdolenc/testing-has:alpine # bash:5.0.16, alpine:3.11
 
     container: ${{ matrix.container }}
