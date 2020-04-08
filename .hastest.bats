@@ -4,6 +4,7 @@ INSTALL_DIR=
 BATS_TMPDIR="${BATS_TMPDIR:-/tmp}"
 fancyx='✗'
 checkmark='✓'
+PATH="/usr/local/bin:$PATH"
 ## We need to create a new directory so that .hasrc file in the root does not get read by the `has` instance under test
 setup() {
   export HAS_TMPDIR="${BATS_TMPDIR}/tmp-for-test"
