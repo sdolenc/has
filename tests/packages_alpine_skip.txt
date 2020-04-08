@@ -2,14 +2,12 @@ apt
 apt-get
 aptitude
 
-ab
 ag
 ant
 autojump
 aws
 brew
 brunch
-bundle
 code
 eb
 gcloud
@@ -21,9 +19,6 @@ grunt
 gulp
 has
 heroku
-hg
-http
-hub
 java
 javac
 kotlin
@@ -35,12 +30,10 @@ node
 perl6
 php5
 podman
-psql
 rake
 rg
 sbt
 scala
 sls
 subl
-svn
 unar

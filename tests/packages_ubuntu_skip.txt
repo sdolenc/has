@@ -1,9 +1,7 @@
-ab
 ag
 aws
 brew
 brunch
-bundle
 code
 docker
 eb
@@ -14,9 +12,6 @@ go
 gor
 has
 heroku
-hg
-http
-hub
 java
 javac
 kotlin
@@ -27,11 +22,9 @@ netlifyctl
 node
 php5
 podman
-psql
 R
 rg
 sbt
 sls
 subl
-svn
 xz
