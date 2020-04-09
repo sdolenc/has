@@ -69,6 +69,7 @@ teardown() {
   elif grep -iq "ubuntu" /etc/issue; then
     skip "todo: this test fails on ubuntu in CI"
   fi
+
   run make update
 
   [ "$status" -eq 0 ]
