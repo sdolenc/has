@@ -52,7 +52,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         rake \
         ruby \
         ruby-bundler `#bundle` \
-        rubygems `#gem`
+        rubygems `#gem` \
         scala \
         silversearcher-ag `#ag` \
         subversion `#svn` \
