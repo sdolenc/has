@@ -19,8 +19,10 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         apt-utils `#todo ` \
         aptitude \
         autojump \
+        awscli `#aws` \
         bzr \
         curl \
+        docker.io `#docker` \
         emacs \
         file \
         gcc \
@@ -32,20 +34,27 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         httpie `#http` \
         hugo \
         jq \
+        leiningen `#lein` \
+        linuxbrew-wrapper `#brew` \
         make \
         mercurial `#hg` \
         nano \
+        nodejs `#node` \
         npm \
+        openjdk-11-jdk-headless `#java #javac` \
         perl6 \
         php \
         postgresql-client `#psql` \
         pv \
         python \
         python3 \
+        r-cran-littler `#R` \
         rake \
         ruby \
         ruby-bundler `#bundle` \
+        rubygems `#gem`
         scala \
+        silversearcher-ag `#ag` \
         subversion `#svn` \
         sudo \
         tree \
@@ -53,6 +62,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         unzip \
         vim \
         wget \
+        xz-utils `#xz` \
         yarn \
         zip \
         zsh \
