@@ -66,15 +66,11 @@ teardown() {
 }
 
 @test "make update runs git fetch" {
-  if [[ -n $GITHUB_ACTION || -n $GITHUB_ACTIONS ]]; then
-    if [ "$(uname -a | grep -i "ubuntu")" ]; then
-      skip "todo: this test fails on ubuntu in CI"
-    fi
-  fi
-
   cd "${BATS_TEST_DIRNAME}"
-  if [[ -z $GITHUB_ACTION || -z $GITHUB_ACTIONS ]]; then
+  if [[ -z $GITHUB_ACTION && -z $GITHUB_ACTIONS ]]; then
     skip "make update overwrites my git working tree"
+  elif [ "$(uname -a | grep -i "ubuntu")" ]; then
+    skip "todo: this test fails on ubuntu in CI"
   fi
   run make update
 
