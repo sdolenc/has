@@ -1,6 +1,5 @@
 #!/usr/bin/env bats
 
-env
 INSTALL_DIR=
 BATS_TMPDIR="${BATS_TMPDIR:-/tmp}"
 fancyx='✗'
@@ -22,8 +21,6 @@ teardown() {
 
 @test "invoking 'has' without arguments prints usage" {
   run $has
-  env
-  env >&3
 
   [ "$status" -eq 0 ]
   [ "${lines[0]%% *}" = 'has'     ]
