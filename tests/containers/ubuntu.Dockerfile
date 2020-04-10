@@ -23,10 +23,10 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         bzr=2.7.0+bzr6622-10 \
         curl=7.58.0-2ubuntu3.8 \
         docker.io `#docker` \
-        emacs \
-        file \
-        gcc \
-        git \
+        emacs=47.0 \
+        file=1:5.32-2ubuntu0.3 \
+        gcc=4:7.4.0-1ubuntu2.3 \
+        git=1:2.17.1-1ubuntu0.5 \
         gradle=4.4.1-5ubuntu2~18.04 \
         groovy=2.4.16-1ubuntu1~18.04.1 \
         grunt=1.0.1-8 \
@@ -43,14 +43,14 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         npm=3.5.2-0ubuntu4 \
         openjdk-11-jdk-headless `#java #javac` \
         perl6=6.c-1 \
-        php \
+        php=1:7.2+60ubuntu1 \
         postgresql-client `#psql` \
         pv=1.6.6-1 \
         python=2.7.15~rc1-1 \
         python3=3.6.7-1~18.04 \
         r-cran-littler `#R` \
         rake=12.3.1-1ubuntu0.1 \
-        ruby \
+        ruby=1:2.5.1 \
         ruby-bundler `#bundle` \
         rubygems `#gem` \
         scala=2.11.12-4~18.04 \
@@ -60,7 +60,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         tree=1.7.0-5 \
         unar=1.10.1-2build3 \
         unzip=6.0-21ubuntu1 \
-        vim \
+        vim=2:8.0.1453-1ubuntu1.3 \
         wget=1.19.4-1ubuntu2.2 \
         xz-utils `#xz` \
         yarn \
