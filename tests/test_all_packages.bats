@@ -10,7 +10,7 @@ fi
 @test "test each package individually" {
   final_status=0
 
-  for package in $(packages_all.sh); do
+  for package in $(bash packages_all.sh); do
     if [[ -n $package ]]; then
       if ! grep -q "^$package$" packages_${distro}_skip.txt; then
         package=$package run bats -t test_package.bats
@@ -27,8 +27,8 @@ fi
 
 @test "test all packages at once" {
   # subtract skips from full list
-  packages_to_skip="$(cat packages_${distro}_skip.txt | xargs | tr " " "|")"
-  packages=$(packages_all.sh | egrep -v "$packages_to_skip" | xargs)
+  packages_to_skip="$(grep -Ev "^\s*(#|$)" packages_${distro}_skip.txt | xargs | tr " " "|")"
+  packages=$(bash packages_all.sh | egrep -Ev "$packages_to_skip" | xargs)
 
   run ../has $packages
   echo "$output" >&3
