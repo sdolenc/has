@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-pushd "$(dirname "${BASH_SOURCE[0]}")"
+pushd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null
 
-grep -o "^ \\+[a-zA-Z0-9_|-]\\+)" ../has | grep -o "[a-zA-Z0-9_|-]\\+" | tr "|" "\\n" | sort > packages_all.txt
+grep -o "^ \\+[a-zA-Z0-9_|-]\\+)" ../has | grep -o "[a-zA-Z0-9_|-]\\+" | tr "|" "\\n" | sort
 
-popd
+popd >/dev/null
