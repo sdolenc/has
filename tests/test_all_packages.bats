@@ -6,13 +6,14 @@ distro="alpine"
 if command -v apt-get 2>&1 >/dev/null; then
   distro="ubuntu"
 fi
+SKIP_FILE=packages_${distro}_skip.txt
 
 @test "test each package individually" {
   final_status=0
 
   for package in $(bash packages_all.sh); do
     if [[ -n $package ]]; then
-      if ! grep -q "^$package$" packages_${distro}_skip.txt; then
+      if ! grep -q "^$package$" $SKIP_FILE; then
         package=$package run bats -t test_package.bats
         echo "# $output" >&3
         echo "#" >&3
@@ -27,7 +28,7 @@ fi
 
 @test "test all packages at once" {
   # subtract skips from full list
-  packages_to_skip="$(grep -Ev "^\s*(#|$)" packages_${distro}_skip.txt | xargs | tr " " "|")"
+  packages_to_skip="$(grep -Ev "^\s*(#|$)" $SKIP_FILE | xargs | tr " " "|")"
   packages=$(bash packages_all.sh | egrep -Ev "$packages_to_skip" | xargs)
 
   run ../has $packages
