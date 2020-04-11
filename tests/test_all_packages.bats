@@ -9,7 +9,7 @@ fi
 SKIP_FILE=packages_${distro}_skip.txt
 DOCKER_FILE=./containers/${distro}.Dockerfile
 
-get_string_containing_expected_version() {
+expected_version() {
   grep "$1" $DOCKER_FILE
 }
 
@@ -20,10 +20,10 @@ get_string_containing_expected_version() {
     if [[ -n $package ]]; then
       if ! grep -q "^$package$" $SKIP_FILE; then
         expected_version=""
-        run $(get_string_containing_expected_version $package)
-        if [ "$status" -eq 0 ];
+        run $(expected_version $package)
+        if [ "$status" -eq 0 ]; then
           expected_version="$output"
-        then
+        fi
 
         package=$package expected_version="$expected_version" run bats -t test_package.bats
         echo "# $output" >&3
