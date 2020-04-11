@@ -16,5 +16,10 @@ get_version_from_has() {
   actual_ver=$(get_version_from_has "$output")
   [ -n $actual_ver ]
 
+  echo "# $expected_ver" >&3
+  echo "$expected_ver" >&3
+  echo "# $actual_ver" >&3
+  echo "$actual_ver" >&3
+
   echo "$expected_ver" | grep -qF $actual_ver
 }
