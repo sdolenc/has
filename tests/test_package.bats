@@ -12,5 +12,9 @@ get_version_from_has() {
   [ "$status" -eq 0 ]
 
   [ -n $expected_ver ]
-  echo "$expected_ver" | grep -q "$(get_version_from_has "$output")"
+
+  actual_ver=$(get_version_from_has "$output")
+  [ -n $actual_ver ]
+
+  echo "$expected_ver" | grep -qF $actual_ver
 }
