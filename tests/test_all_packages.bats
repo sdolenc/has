@@ -19,13 +19,13 @@ expected_version() {
   for package in $(bash packages_all.sh); do
     if [[ -n $package ]]; then
       if ! grep -q "^$package$" $SKIP_FILE; then
-        expected_version=""
+        expected_ver=""
         run $(expected_version $package)
         if [ "$status" -eq 0 ]; then
-          expected_version="$output"
+          expected_ver="$output"
         fi
 
-        package=$package expected_version="$expected_version" run bats -t test_package.bats
+        package=$package expected_ver="$expected_ver" run bats -t test_package.bats
         echo "# $output" >&3
         echo "#" >&3
         final_status=$(($final_status + $status))
