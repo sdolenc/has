@@ -2,7 +2,15 @@
 
 cd $BATS_TEST_DIRNAME
 
+get_version_from_has() {
+  echo "$1" | tr " " "\n" | tail -1
+}
+
 @test "test $package" {
-  # todo: fail if missing right-side version (like wget on alpine)
-  ../has $package >&3
+  run ../has $package
+  echo "$output" >&3
+  [ "$status" -eq 0 ]
+
+  [ -n "$expected_version" ]
+  echo "$expected_version" | grep -q "$(get_version_from_has $package)"
 }

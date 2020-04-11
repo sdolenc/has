@@ -1,6 +1,9 @@
+# non-alpine packages
 apt
 apt-get
 aptitude
+
+# todo: add to test container
 ag
 ant
 autojump
@@ -37,3 +40,16 @@ scala
 sls
 subl
 unar
+
+# installed on container (and has confirms), but
+# todo: has shows EMPTY version string on container
+awk
+bzip2
+grep
+wget
+xz
+
+# installed on container (and has confirms), but
+# todo: has grabs INCORRECT version string on container
+jq
+perl

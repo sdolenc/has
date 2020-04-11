@@ -7,6 +7,11 @@ if command -v apt-get 2>&1 >/dev/null; then
   distro="ubuntu"
 fi
 SKIP_FILE=packages_${distro}_skip.txt
+DOCKER_FILE=./containers/${distro}.Dockerfile
+
+get_string_containing_expected_version() {
+  grep "$1" $DOCKER_FILE
+}
 
 @test "test each package individually" {
   final_status=0
@@ -14,7 +19,13 @@ SKIP_FILE=packages_${distro}_skip.txt
   for package in $(bash packages_all.sh); do
     if [[ -n $package ]]; then
       if ! grep -q "^$package$" $SKIP_FILE; then
-        package=$package run bats -t test_package.bats
+        expected_version=""
+        run $(get_string_containing_expected_version $package)
+        if [ "$status" -eq 0 ];
+          expected_version="$output"
+        then
+
+        package=$package expected_version="$expected_version" run bats -t test_package.bats
         echo "# $output" >&3
         echo "#" >&3
         final_status=$(($final_status + $status))
