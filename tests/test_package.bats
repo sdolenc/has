@@ -12,5 +12,5 @@ get_version_from_has() {
   [ "$status" -eq 0 ]
 
   [ -n $expected_ver ]
-  echo "$expected_ver" | grep -q "$(get_version_from_has $package)"
+  echo "$expected_ver" | grep -q "$(get_version_from_has "$output")"
 }
