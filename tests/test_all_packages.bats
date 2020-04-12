@@ -20,9 +20,10 @@ expected_version() {
     if [[ -n $package ]]; then
       if ! grep -q "^$package$" $SKIP_FILE; then
         expected_ver=""
-        run $(expected_version $package)
+        run expected_version $package
         if [ "$status" -eq 0 ]; then
           expected_ver="$output"
+          [ -n "$expected_ver" ]
         fi
 
         package=$package expected_ver="$expected_ver" run bats -t test_package.bats
