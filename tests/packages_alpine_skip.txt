@@ -46,6 +46,7 @@ unar
 awk
 bzip2
 grep
+gzip
 wget
 xz
 
