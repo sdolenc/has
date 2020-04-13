@@ -10,10 +10,10 @@ SKIP_FILE=packages_${distro}_skip.txt
 DOCKER_FILE=./containers/${distro}.Dockerfile
 
 expected_version() {
-  grep "$1" $DOCKER_FILE
+  grep -Eo "( |#)${1}=[^\` *]+" $DOCKER_FILE | tr "=" "\n" | tr ":" "\n" | tail -1
 }
 
-@test "test each package individually" {
+@test "test each package individually and verify version" {
   final_status=0
 
   for package in $(bash packages_all.sh); do
@@ -24,12 +24,11 @@ expected_version() {
         if [ "$status" -eq 0 ]; then
           expected_ver="$output"
           [ -n "$expected_ver" ]
-        fi
-
-        package=$package expected_ver="$expected_ver" run bats -t test_package.bats
-        echo "# $output" >&3
-        echo "#" >&3
-        final_status=$(($final_status + $status))
+ 
+          package=$package expected_ver="$expected_ver" run bats -t test_package.bats
+          echo "# $output" >&3
+          echo "#" >&3
+          final_status=$(($final_status + $status))
       fi
     fi
   done

@@ -39,7 +39,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         make=4.1* \
         mercurial `# hg=4.5.3` \
         nano=2.9.3* \
-        nodejs=8.10.0* `# node` \
+        nodejs=8.10.0* `# node=8.10.0` \
         npm=3.5.2* \
         openjdk-11-jdk-headless `# java=11.0.6 # javac=11.0.6` \
         perl6=6.c-1 `# perl6=2018.03` \
