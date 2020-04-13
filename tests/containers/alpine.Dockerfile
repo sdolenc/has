@@ -23,24 +23,24 @@ RUN apk add --no-cache \
         git=2.24.1-r0 \
         go=1.13.4-r1 \
         gradle=5.6.4-r0 \
-        httpie=1.0.3-r1 `# http` \
+        httpie=1.0.3-r1 `# http=1.0.3` \
         hugo=0.61.0-r0 \
         jq=1.6-r0 \
         make=4.2.1-r2 \
-        mercurial=5.3.2-r0 `# hg` \
+        mercurial=5.3.2-r0 `# hg=5.3.2` \
         nano=4.6-r0 \
         ncurses=6.1_p20200118-r2 `#tput:todo` \
         npm `# npm=6.13.4 ` \
         perl=5.30.1-r0 ` # perl=30` \
         php `# php=7.3.16 ` \
-        postgresql=12.2-r0 `# psql` \
+        postgresql=12.2-r0 `# psql=12.2` \
         pv=1.6.6-r1 \
         python=2.7.16-r3 \
         python3=3.8.2-r0 \
         R=3.6.2-r0 \
         ruby=2.6.6-r2 \
-        ruby-bundler=2.0.2-r1 `# bundle` \
-        subversion=1.12.2-r1 `# svn` \
+        ruby-bundler=2.0.2-r1 `# bundle=2.0.2` \
+        subversion=1.12.2-r1 `# svn=1.12.2` \
         sudo=1.8.31-r0 \
         tree=1.8.0-r0 \
         vim=8.2.0-r0 \
