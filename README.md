@@ -187,6 +187,10 @@ corresponding function which can be called to check presence and extract version
 extraction may not work and you will need to add custom parsing of command's output. The `has` script is commented
 to guide developers about what needs to be done to add more tools. 
 
+The tests in `/tests/test_all_packages.bats` will automatically test every package has supports. Newly added packages will automatically be tested so please add new packages to
+ - `alpine.Dockerfile` and `ubuntu.Dockerfile` OR
+ - `packages_alpine_skip.txt` and `packages_ubuntu_skip.txt`
+
 
 ## Adding Features
 
