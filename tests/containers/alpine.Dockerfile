@@ -29,7 +29,7 @@ RUN apk add --no-cache \
         make=4.2.1-r2 \
         mercurial=5.3.2-r0 `# hg=5.3.2` \
         nano=4.6-r0 \
-        ncurses=6.1_p20200118-r2 `#tput:todo` \
+        ncurses=6.1_p20200118-r3 `#tput:todo` \
         npm `# npm=6.13.4 ` \
         perl=5.30.1-r0 ` # perl=30` \
         php `# php=7.3.16 ` \
