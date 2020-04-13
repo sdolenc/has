@@ -29,6 +29,7 @@ expected_version() {
           echo "# $output" >&3
           echo "#" >&3
           final_status=$(($final_status + $status))
+        fi
       fi
     fi
   done
