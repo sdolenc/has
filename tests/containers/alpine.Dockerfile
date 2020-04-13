@@ -43,7 +43,7 @@ RUN apk add --no-cache \
         subversion=1.12.2-r1 `# svn=1.12.2` \
         sudo=1.8.31-r0 \
         tree=1.8.0-r0 \
-        vim=8.2.0-r0 \
+        vim=8.2.0-r0 `# vim=8.2` \
         yarn=1.19.2-r0 \
         zip=3.0-r7 \
         zsh=5.7.1-r0; \
