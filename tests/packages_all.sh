@@ -1,4 +1,5 @@
 #!/bin/bash
+## This script outputs all of the packages that has explicitly supports.
 set -euo pipefail
 
 pushd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null

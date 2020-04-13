@@ -10,6 +10,8 @@ get_version_from_has() {
   # Ensure inputs
   [ -n "$package" ]
   [ -n "$expected_ver" ]
+  [ "$(echo "${package}" | wc -w)" -eq 1 ]
+  [ "$(echo "${expected_ver}" | wc -w)" -eq 1 ]
 
   # Confirm package is installed
   run ../has $package
