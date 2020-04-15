@@ -1,7 +1,5 @@
 FROM bash:5.0.16
 
-ENV PATH /google-cloud-sdk/bin:$PATH
-
 # already contains
 #       awk
 #       bash=5.0.16
@@ -60,5 +58,7 @@ RUN apk add --no-cache \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
     "bats-core-bats-core-${commit}/install.sh" /usr/local; \
     \
-    # hub=2.14.2
-    curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.2
+    hub=2.14.2;
+    curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz
+
+ENV PATH /hub-linux-386-${hub}/bin:/google-cloud-sdk/bin:$PATH
