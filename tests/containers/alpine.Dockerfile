@@ -58,7 +58,7 @@ RUN apk add --no-cache \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
     "bats-core-bats-core-${commit}/install.sh" /usr/local; \
     \
-    hub=2.14.2;
+    hub=2.14.2; \
     curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz
 
 ENV PATH /hub-linux-386-${hub}/bin:/google-cloud-sdk/bin:$PATH
