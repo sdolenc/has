@@ -53,4 +53,7 @@ RUN apk add --no-cache \
     # bats=1.2.0
     commit="87b16eb"; \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
-    "bats-core-bats-core-${commit}/install.sh" /usr/local
+    "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    \
+    # hub=2.14.2
+    curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.2
