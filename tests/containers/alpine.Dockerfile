@@ -1,5 +1,7 @@
 FROM bash:5.0.16
 
+ENV PATH /google-cloud-sdk/bin:$PATH
+
 # already contains
 #       awk
 #       bash=5.0.16
@@ -49,6 +51,9 @@ RUN apk add --no-cache \
         zsh=5.7.1-r0; \
     \
     npm install -g brunch@"=3.0.0"; \
+    \
+    gcloud=289.0.0; \
+    curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \
     \
     # bats=1.2.0
     commit="87b16eb"; \
