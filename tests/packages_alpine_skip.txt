@@ -11,7 +11,6 @@ aws
 brew
 code
 eb
-gcloud
 gem
 gnu_coreutils
 gor
