@@ -20,7 +20,6 @@ grunt
 gulp
 has
 heroku
-hub
 java
 javac
 kotlin
