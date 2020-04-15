@@ -48,6 +48,8 @@ RUN apk add --no-cache \
         zip=3.0-r7 \
         zsh=5.7.1-r0; \
     \
+    npm install -g brunch@"=3.0.0"; \
+    \
     # bats=1.2.0
     commit="87b16eb"; \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
