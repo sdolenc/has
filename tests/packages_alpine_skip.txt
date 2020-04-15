@@ -44,6 +44,7 @@ awk
 bzip2
 grep
 gzip
+hub
 wget
 xz
 
