@@ -6,6 +6,7 @@ FROM ubuntu:bionic-20200311
 #       awk
 #       bash=4.4.20
 #       bzip2=1.0.6
+#       gnu_coreutils=8.28
 #       grep=3.1
 #       gzip=1.6
 #       perl=26

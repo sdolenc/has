@@ -2,7 +2,6 @@
 brunch
 code
 eb
-gnu_coreutils
 go
 gor
 has

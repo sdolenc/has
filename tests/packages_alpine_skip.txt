@@ -3,6 +3,13 @@ apt
 apt-get
 aptitude
 
+# gnu_coreutils shows as installed, but is not on alpine.
+# todo: We should change the command we use for this to
+# something busybox doesn't also implement. Examples:
+#  chcon, csplit, dir, dircolors, fmt, join, logname, pathchk,
+#  pinky, pr, ptx, runcon, stdbuf, tsort, users, vdir, who
+gnu_coreutils
+
 # todo: add to test container
 ag
 ant
@@ -12,7 +19,6 @@ brew
 code
 eb
 gem
-gnu_coreutils
 gor
 groovy
 grunt
