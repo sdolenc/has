@@ -1,5 +1,4 @@
 b2sum
-base32
 chcon
 csplit
 dir
@@ -13,8 +12,6 @@ pinky
 pr
 ptx
 runcon
-sha224sum
-sha384sum
 stdbuf
 tsort
 users
