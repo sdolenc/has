@@ -14,7 +14,7 @@ get_version_from_has() {
   [ "$(echo "${expected_ver}" | wc -w)" -eq 1 ]
 
   # Confirm package is installed
-  run ../has $package
+  HAS_ALLOW_UNSAFE=y run ../has $package
   echo "$output" >&3
   [ "$status" -eq 0 ]
 
