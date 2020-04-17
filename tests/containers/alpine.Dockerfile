@@ -54,18 +54,20 @@ RUN apk add --no-cache \
         heroku@="7.39.3" \
         netlify-cli@="2.46.0"; `# netlify=2.46.0` \
     \
+    commit="87b16eb"; `# bats=1.2.0` \
+    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
+    "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    \
     gcloud=289.0.0; \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \
     \
-    # bats=1.2.0
-    commit="87b16eb"; \
-    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
-    "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    gor=1.0.0; \
+    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin; \
     \
     hub=2.14.2; \
     curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz; \
     \
-    gor=1.0.0; \
-    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin
+    netlifyctl=0.4.0; \
+    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin
 
 ENV PATH /hub-linux-386-${hub}/bin:/google-cloud-sdk/bin:$PATH

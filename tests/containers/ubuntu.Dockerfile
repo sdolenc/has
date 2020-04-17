@@ -69,19 +69,21 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         zsh=5.4.2* \
         && apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*; \
     \
+    commit="87b16eb"; `# bats=1.2.0` \
+    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
+    "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    \
     gcloud=289.0.0; \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \
     \
-    # bats=1.2.0
-    commit="87b16eb"; \
-    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
-    "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    gor=1.0.0; \
+    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin; \
     \
     hub=2.14.2; \
     curl -fsSL "https://github.com/github/hub/raw/master/script/get" | bash -s ${hub}; \
     \
-    gor=1.0.0; \
-    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin; \
+    netlifyctl=0.4.0; \
+    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
     \
     apt-get -y autoremove; \
     apt-get -y clean; \
