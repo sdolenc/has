@@ -27,7 +27,6 @@ java
 javac
 kotlin
 lein
-mvn
 netlify
 netlifyctl
 node
