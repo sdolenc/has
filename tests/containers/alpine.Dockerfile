@@ -33,7 +33,7 @@ RUN apk add --no-cache \
         ncurses=6.1_p20200118-r3 `#tput:todo` \
         npm `# npm=6.13.4 ` \
         perl=5.30.1-r0 ` # perl=30` \
-        php `# php=7.3.16 ` \
+        php7=7.3.17-r0 `# php=7.3.17 ` \
         postgresql=12.2-r0 `# psql=12.2` \
         pv=1.6.6-r1 \
         python=2.7.16-r3 \
