@@ -68,6 +68,10 @@ RUN apk add --no-cache \
     curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz; \
     \
     netlifyctl=0.4.0; \
-    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin
+    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
+    \
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories; \
+    apk add --no-cache \
+        podman=1.9.0-r0
 
 ENV PATH /hub-linux-386-${hub}/bin:/google-cloud-sdk/bin:$PATH
