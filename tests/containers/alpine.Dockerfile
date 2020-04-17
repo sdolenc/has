@@ -51,7 +51,8 @@ RUN apk add --no-cache \
     \
     npm install -g \
         brunch@"=3.0.0" \
-        heroku@="7.39.3"; \
+        heroku@="7.39.3" \
+        netlify-cli@="2.46.0"; `# netlify=2.46.0` \
     \
     gcloud=289.0.0; \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \
