@@ -39,9 +39,15 @@ expected_version() {
   packages_to_skip="$(grep -Ev "^\s*(#|$)" $SKIP_FILE | xargs | tr " " "|")"
   packages=$(bash packages_all.sh | egrep -Ev "^($packages_to_skip)$" | xargs)
 
-  echo "# testing $(echo "${packages}" | wc -w) commands simultaneously"
   run ../has $packages
   echo "$output" >&3
+  echo "#" >&3
+
+  packages_count=$(echo "${packages}" | wc -w)
+  echo "# tested ${packages_count} commands simultaneously" >&3
+  actual_packages_count=$(echo "${output}" | wc -l)
+  echo "# received output from ${actual_packages_count} commands" >&3
+  [ "$packages_count" -eq "$actual_packages_count" ]
   echo "#" >&3
 
   echo "# status code=$status" >&3
