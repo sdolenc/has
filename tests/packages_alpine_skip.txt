@@ -29,7 +29,6 @@ kotlin
 lein
 node
 perl6
-podman
 rake
 rg
 sbt

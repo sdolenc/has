@@ -8,7 +8,6 @@ heroku
 kotlin
 mvn
 netlify
-podman
 rg
 sbt
 sls
