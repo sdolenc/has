@@ -38,7 +38,7 @@ sls
 subl
 unar
 
-# runs best on alpine 3.8, but we're using 3.11
+# runs best on alpine 3.8 or earlier, but we're using 3.11
 php5
 
 # installed on container (and has confirms), but
