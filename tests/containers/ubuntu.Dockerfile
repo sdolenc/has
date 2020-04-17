@@ -81,6 +81,10 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     curl -fsSL "https://github.com/github/hub/raw/master/script/get" | bash -s ${hub}; \
     \
     gor=1.0.0; \
-    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin
+    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin; \
+    \
+    apt-get -y autoremove; \
+    apt-get -y clean; \
+    rm -rf /var/lib/apt/lists/*
 
 ENV PATH /google-cloud-sdk/bin:$PATH
