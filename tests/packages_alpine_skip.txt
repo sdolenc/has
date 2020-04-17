@@ -19,7 +19,6 @@ brew
 code
 eb
 gem
-gor
 groovy
 grunt
 gulp

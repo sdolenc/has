@@ -48,7 +48,9 @@ RUN apk add --no-cache \
         zip=3.0-r7 \
         zsh=5.7.1-r0; \
     \
-    npm install -g brunch@"=3.0.0"; \
+    npm install -g \
+        brunch@"=3.0.0" \
+        heroku@="7.39.3"; \
     \
     gcloud=289.0.0; \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \

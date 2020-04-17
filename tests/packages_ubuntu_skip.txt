@@ -3,7 +3,6 @@ brunch
 code
 eb
 go
-gor
 has
 heroku
 kotlin
