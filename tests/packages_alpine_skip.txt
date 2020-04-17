@@ -27,8 +27,6 @@ java
 javac
 kotlin
 lein
-netlify
-netlifyctl
 node
 perl6
 php5

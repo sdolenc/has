@@ -8,7 +8,6 @@ heroku
 kotlin
 mvn
 netlify
-netlifyctl
 php5
 podman
 rg
