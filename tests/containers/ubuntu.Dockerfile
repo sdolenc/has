@@ -69,7 +69,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         zsh=5.4.2* \
         && apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*; \
     \
-    commit="87b16eb"; `# bats=1.2.0` \
+    commit="87b16eb" `# bats=1.2.0`; \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
     "bats-core-bats-core-${commit}/install.sh" /usr/local; \
     \
