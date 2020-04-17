@@ -23,7 +23,6 @@ groovy
 grunt
 gulp
 has
-heroku
 java
 javac
 kotlin
