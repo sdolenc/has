@@ -57,3 +57,7 @@ xz
 # todo: has grabs INCORRECT version string on container
 jq
 perl
+
+# installed on container (and has confirms), but
+# todo: has says command isn't found
+gor
