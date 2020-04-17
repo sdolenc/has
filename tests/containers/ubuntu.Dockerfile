@@ -83,10 +83,6 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     curl -fsSL "https://github.com/github/hub/raw/master/script/get" | bash -s ${hub}; \
     \
     netlifyctl=0.4.0; \
-    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
-    \
-    apt-get -y autoremove; \
-    apt-get -y clean; \
-    rm -rf /var/lib/apt/lists/*
+    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin
 
 ENV PATH /google-cloud-sdk/bin:$PATH
