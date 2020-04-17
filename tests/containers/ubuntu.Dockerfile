@@ -78,6 +78,9 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     "bats-core-bats-core-${commit}/install.sh" /usr/local; \
     \
     hub=2.14.2; \
-    curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s ${hub}
+    curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s ${hub}; \
+    \
+    gor=1.0.0; \
+    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin
 
 ENV PATH /google-cloud-sdk/bin:$PATH

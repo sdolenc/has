@@ -59,6 +59,9 @@ RUN apk add --no-cache \
     "bats-core-bats-core-${commit}/install.sh" /usr/local; \
     \
     hub=2.14.2; \
-    curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz
+    curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz; \
+    \
+    gor=1.0.0; \
+    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin
 
 ENV PATH /hub-linux-386-${hub}/bin:/google-cloud-sdk/bin:$PATH
