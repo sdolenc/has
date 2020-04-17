@@ -27,6 +27,7 @@ RUN apk add --no-cache \
         hugo=0.61.0-r0 \
         jq=1.6-r0 \
         make=4.2.1-r2 \
+        maven=3.6.3-r0 `# mvn=3.6.3` \
         mercurial=5.3.2-r0 `# hg=5.3.2` \
         nano=4.6-r0 \
         ncurses=6.1_p20200118-r3 `#tput:todo` \
