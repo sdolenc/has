@@ -85,9 +85,11 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     netlifyctl=0.4.0; \
     curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
     \
-    add-apt-repository -y ppa:ondrej/php; \
+    add-apt-repository -y ppa:ondrej/php `#php5`; \
+    add-apt-repository -y ppa:projectatomic/ppa `#podman`; \
     apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
-        php5.6=5.6.40* `# php5=5.6.40`; \
+        php5.6=5.6.40* `# php5=5.6.40` \
+        podman=1.6.2*; \
     ln -s /usr/bin/php5.6 /usr/bin/php5; \
     \
     apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
