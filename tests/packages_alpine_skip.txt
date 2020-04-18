@@ -30,7 +30,6 @@ lein
 node
 perl6
 rake
-rg
 sbt
 scala
 sls
