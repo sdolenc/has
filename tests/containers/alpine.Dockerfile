@@ -66,12 +66,17 @@ RUN apk add --no-cache \
     \
     hub=2.14.2; \
     curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz; \
+    ln -s "/hub-linux-386-${hub}/bin/hub" /usr/local/bin/hub; \
     \
     netlifyctl=0.4.0; \
     curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
+    \
+    rg=12.0.1; \
+    curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz; \
+    ln -s "/ripgrep-${rg}-x86_64-unknown-linux-musl/rg" /usr/local/bin/rg; \
     \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories; \
     apk add --no-cache \
         podman=1.9.0-r0
 
-ENV PATH /hub-linux-386-${hub}/bin:/google-cloud-sdk/bin:$PATH
+ENV PATH /google-cloud-sdk/bin:$PATH
