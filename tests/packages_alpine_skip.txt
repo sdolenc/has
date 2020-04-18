@@ -32,7 +32,6 @@ perl6
 rake
 sbt
 scala
-sls
 subl
 unar
 
