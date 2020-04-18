@@ -52,7 +52,8 @@ RUN apk add --no-cache \
     npm install -g \
         brunch@"=3.0.0" \
         heroku@"=7.39.3" \
-        netlify-cli@="2.46.0" `# netlify=2.46.0`; \
+        netlify-cli@="2.46.0" `# netlify=2.46.0` \
+        serverless@="1.67.3" `# sls=1.67.3`; \
     \
     commit="87b16eb" `# bats=1.2.0`; \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
