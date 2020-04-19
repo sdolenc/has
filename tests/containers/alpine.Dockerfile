@@ -41,6 +41,7 @@ RUN apk add --no-cache \
         R=3.6.2-r0 \
         ruby=2.6.6-r2 \
         ruby-bundler=2.0.2-r1 `# bundle=2.0.2` \
+        ruby-bigdecimal ruby-json `# required for brew` \
         subversion=1.12.2-r1 `# svn=1.12.2` \
         sudo=1.8.31-r0 \
         tree=1.8.0-r0 \
@@ -58,6 +59,12 @@ RUN apk add --no-cache \
     commit="87b16eb" `# bats=1.2.0`; \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
     "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    \
+    brew=2.2.13; \
+    git clone --branch ${brew} https://github.com/Homebrew/brew; \
+    ln -s $(which bash) /bin/bash; \
+    eval $(brew/bin/brew shellenv); \
+    brew --version; \
     \
     gcloud=289.0.0; \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \

@@ -36,7 +36,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         hugo=0.40.1* \
         jq=1.5* \
         leiningen `# lein=2.8.1` \
-        linuxbrew-wrapper `# brew` \
+        locales `# required for brew` \
         make=4.1* \
         mercurial `# hg=4.5.3` \
         nano=2.9.3* \
@@ -72,6 +72,12 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     commit="87b16eb" `# bats=1.2.0`; \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
     "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    \
+    brew=2.2.13; \
+    git clone --branch ${brew} https://github.com/Homebrew/brew; \
+    locale-gen en_US en_US.UTF-8; \
+    eval $(brew/bin/brew shellenv); \
+    brew --version; \
     \
     gcloud=289.0.0; \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \
