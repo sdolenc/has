@@ -64,6 +64,7 @@ RUN apk add --no-cache \
     git clone --branch ${brew} https://github.com/Homebrew/brew; \
     ln -s $(which bash) /bin/bash; \
     eval $(brew/bin/brew shellenv); \
+    ln -s /brew/bin/brew /usr/local/bin/brew; \
     brew --version; \
     \
     gcloud=289.0.0; \

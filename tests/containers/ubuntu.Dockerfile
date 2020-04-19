@@ -77,6 +77,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     git clone --branch ${brew} https://github.com/Homebrew/brew; \
     locale-gen en_US en_US.UTF-8; \
     eval $(brew/bin/brew shellenv); \
+    ln -s /brew/bin/brew /usr/local/bin/brew; \
     brew --version; \
     \
     gcloud=289.0.0; \
