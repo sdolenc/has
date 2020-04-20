@@ -31,8 +31,6 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         gpg-agent `# todo:apt-key` \
         gradle=4.4.1* \
         groovy=2.4.16* \
-        grunt=1.0.1-8 `# grunt=1.2.0` \
-        gulp=3.9.1* \
         httpie `# http=0.9.8` \
         hugo=0.40.1* \
         jq=1.5* \
@@ -107,11 +105,13 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         sublime-text=3211; \
     ln -s /usr/bin/php5.6 /usr/bin/php5; \
     \
-    npm install -g \
+    npm install --global \
         brunch@"=3.0.0" \
+        grunt-cli@"=2.2.0" \
+        gulp-cli@"=1.3.2" \
         heroku@"=7.39.3" \
-        netlify-cli@="2.46.0" `# netlify=2.46.0` \
-        serverless@="1.67.3" `# sls=1.67.3`; \
+        netlify-cli@"=2.46.0" \
+        serverless@"=1.67.3" `# sls=1.67.3`; \
     \
     apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
 

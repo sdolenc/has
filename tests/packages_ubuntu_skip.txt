@@ -20,3 +20,5 @@ sbt
 # todo: has shows EMPTY version string on container
 awk
 groovy
+grunt
+gulp
