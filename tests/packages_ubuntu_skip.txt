@@ -10,7 +10,6 @@ has
 code
 
 # todo: add to test container
-eb
 kotlin
 go
 mvn
