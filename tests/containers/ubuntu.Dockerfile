@@ -28,7 +28,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         file=1:5.32* \
         gcc=4:7.4.0-1ubuntu2.3 `# gcc=7.5.0` \
         git=1:2.17.1* \
-        gpg-agent `# required for subl` \
+        gpg-agent `# todo:apt-key` \
         gradle=4.4.1* \
         groovy=2.4.16* \
         grunt=1.0.1-8 `# grunt=1.2.0` \
@@ -41,8 +41,6 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         make=4.1* \
         mercurial `# hg=4.5.3` \
         nano=2.9.3* \
-        nodejs=8.10.0* `# node=8.10.0` \
-        npm=3.5.2* \
         openjdk-11-jdk-headless `# java=11.0.6 # javac=11.0.6` \
         perl6=6.c-1 `# perl6=2018.03` \
         php=1:7.2+60ubuntu1 `# php=7.2.24` \
@@ -57,7 +55,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         rubygems `# gem=2.7.6` \
         scala=2.11.12* \
         silversearcher-ag `# ag=2.1.0` \
-        software-properties-common=0.96.24.32.12 `# todo:add-apt-repository ` \
+        software-properties-common=0.96.24.32.12 `# todo:add-apt-repository` \
         subversion `# svn=1.9.7` \
         sudo=1.8.21* \
         tree=1.7.0* \
@@ -97,15 +95,23 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz; \
     ln -s "/ripgrep-${rg}-x86_64-unknown-linux-musl/rg" /usr/local/bin/rg; \
     \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - `#node and npm`;\
     add-apt-repository -y ppa:ondrej/php `#php5`; \
     add-apt-repository -y ppa:projectatomic/ppa `#podman`; \
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - `#subl`; \
     add-apt-repository -y "deb https://download.sublimetext.com/ apt/stable/" `#subl`; \
     apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
+        nodejs=12.16.2* `# node=12.16.2 # npm=6.14.4` \
         php5.6=5.6.40* `# php5=5.6.40` \
         podman=1.6.2* \
         sublime-text=3211; \
     ln -s /usr/bin/php5.6 /usr/bin/php5; \
+    \
+    npm install -g \
+        brunch@"=3.0.0" \
+        heroku@"=7.39.3" \
+        netlify-cli@="2.46.0" `# netlify=2.46.0` \
+        serverless@="1.67.3" `# sls=1.67.3`; \
     \
     apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
