@@ -20,7 +20,7 @@ RUN apk add --no-cache \
         emacs=26.3-r2 \
         file=5.37-r1 \
         gcc=9.2.0-r4 \
-        git=2.24.2-r0 \
+        git~=2.24.2 \
         go=1.13.4-r1 \
         gradle=5.6.4-r0 \
         httpie=1.0.3-r1 `# http=1.0.3` \
