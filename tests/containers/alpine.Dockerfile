@@ -51,11 +51,13 @@ RUN apk add --no-cache \
         zip=3.0-r7 \
         zsh=5.7.1-r0; \
     \
-    npm install -g \
+    npm install --global \
         brunch@"=3.0.0" \
+        grunt-cli@"=1.3.2" \
+        gulp-cli@"=2.2.0" \
         heroku@"=7.39.3" \
-        netlify-cli@="2.46.0" `# netlify=2.46.0` \
-        serverless@="1.67.3" `# sls=1.67.3`; \
+        netlify-cli@"=2.46.0" \
+        serverless@"=1.67.3" `# sls=1.67.3` \
     \
     commit="87b16eb" `# bats=1.2.0`; \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \

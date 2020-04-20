@@ -107,8 +107,8 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     \
     npm install --global \
         brunch@"=3.0.0" \
-        grunt-cli@"=2.2.0" \
-        gulp-cli@"=1.3.2" \
+        grunt-cli@"=1.3.2" \
+        gulp-cli@"=2.2.0" \
         heroku@"=7.39.3" \
         netlify-cli@"=2.46.0" \
         serverless@"=1.67.3" `# sls=1.67.3`; \
