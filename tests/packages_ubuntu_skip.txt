@@ -15,5 +15,4 @@ subl
 # installed on container (and has confirms), but
 # todo: has shows EMPTY version string on container
 awk
-brew
 groovy

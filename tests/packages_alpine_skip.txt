@@ -15,7 +15,6 @@ ag
 ant
 autojump
 aws
-brew
 code
 eb
 gem
