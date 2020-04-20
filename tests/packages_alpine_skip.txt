@@ -2,6 +2,7 @@
 apt
 apt-get
 aptitude
+code
 
 # gnu_coreutils shows as installed, but is not on alpine.
 # todo: We should change the command we use for this to
@@ -15,7 +16,6 @@ ag
 ant
 autojump
 aws
-code
 eb
 gem
 groovy

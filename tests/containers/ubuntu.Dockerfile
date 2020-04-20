@@ -28,6 +28,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         file=1:5.32* \
         gcc=4:7.4.0-1ubuntu2.3 `# gcc=7.5.0` \
         git=1:2.17.1* \
+        gpg-agent `# required for subl` \
         gradle=4.4.1* \
         groovy=2.4.16* \
         grunt=1.0.1-8 `# grunt=1.2.0` \
@@ -98,9 +99,12 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     \
     add-apt-repository -y ppa:ondrej/php `#php5`; \
     add-apt-repository -y ppa:projectatomic/ppa `#podman`; \
+    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - `#subl`; \
+    add-apt-repository -y "deb https://download.sublimetext.com/ apt/stable/" `#subl`; \
     apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
         php5.6=5.6.40* `# php5=5.6.40` \
-        podman=1.6.2*; \
+        podman=1.6.2* \
+        sublime-text=3211; \
     ln -s /usr/bin/php5.6 /usr/bin/php5; \
     \
     apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
