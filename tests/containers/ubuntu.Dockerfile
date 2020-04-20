@@ -21,6 +21,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         aptitude=0.8.10* \
         autojump=22.5.0* \
         awscli `# aws=1.14.44` \
+        build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev `# required for eb`\
         bzr=2.7.0+bzr6622-10 `# bzr=2.8.0` \
         curl=7.58.0* \
         docker.io `# docker=19.03.6` \
@@ -76,6 +77,11 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     eval $(brew/bin/brew shellenv); \
     ln -s /brew/bin/brew /usr/local/bin/brew; \
     brew --version; \
+    \
+    commit="102025c" `# eb=3.18.0`; \
+    curl -L "https://github.com/aws/aws-elastic-beanstalk-cli-setup/tarball/${commit}" | tar xz; \
+    "aws-aws-elastic-beanstalk-cli-setup-${commit}/scripts/bundled_installer"; \
+    ln -s /root/.ebcli-virtual-env/executables/eb /usr/local/bin/eb; \
     \
     gcloud=289.0.0; \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \
