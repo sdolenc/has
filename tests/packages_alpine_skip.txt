@@ -41,7 +41,6 @@ awk
 bzip2
 grep
 gzip
-hub
 wget
 xz
 
@@ -50,6 +49,6 @@ xz
 jq
 perl
 
-# installed on container (and has confirms), but
+# installed on container, but
 # todo: has reports command not found
 gor
