@@ -102,7 +102,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         nodejs=12.16.2* `# node=12.16.2 # npm=6.14.4` \
         php5.6=5.6.40* `# php5=5.6.40` \
         podman=1.6.2* \
-        sublime-text=3211; \
+        sublime-text=3211 `# subl=3211`; \
     ln -s /usr/bin/php5.6 /usr/bin/php5; \
     \
     npm install --global \
