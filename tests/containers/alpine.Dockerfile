@@ -32,6 +32,7 @@ RUN apk add --no-cache \
         nano=4.6-r0 \
         ncurses=6.1_p20200118-r3 `#tput:todo` \
         npm `# npm=6.13.4 ` \
+        openjdk11=11.0.5_p10-r0 `# java=11.0.5` \
         perl=5.30.1-r0 ` # perl=30` \
         php7=7.3.17-r0 `# php=7.3.17 ` \
         postgresql=12.2-r0 `# psql=12.2` \
@@ -48,24 +49,24 @@ RUN apk add --no-cache \
         vim=8.2.0-r0 `# vim=8.2` \
         yarn=1.19.2-r0 \
         zip=3.0-r7 \
-        zsh=5.7.1-r0; \
+        zsh=5.7.1-r0 && \
     \
     npm install -g \
         brunch@"=3.0.0" \
         heroku@"=7.39.3" \
         netlify-cli@="2.46.0" `# netlify=2.46.0` \
-        serverless@="1.67.3" `# sls=1.67.3`; \
+        serverless@="1.67.3" `# sls=1.67.3` && \
     \
     commit="87b16eb" `# bats=1.2.0`; \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
-    "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    "bats-core-bats-core-${commit}/install.sh" /usr/local && \
     \
     brew=2.2.13; \
     git clone --branch ${brew} https://github.com/Homebrew/brew; \
     ln -s $(which bash) /bin/bash; \
-    eval $(brew/bin/brew shellenv); \
-    ln -s /brew/bin/brew /usr/local/bin/brew; \
-    brew --version; \
+    eval $(brew/bin/brew shellenv) && \
+    ln -s /brew/bin/brew /usr/local/bin/brew && \
+    brew --version && \
     \
     gcloud=289.0.0; \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \
@@ -76,6 +77,9 @@ RUN apk add --no-cache \
     hub=2.14.2; \
     curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz; \
     ln -s "/hub-linux-386-${hub}/bin/hub" /usr/local/bin/hub; \
+    \
+    `# javac=11.0.6`; \
+    ln -s "/usr/lib/jvm/java-11-openjdk/bin/javac" /usr/local/bin/javac; \
     \
     netlifyctl=0.4.0; \
     curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
