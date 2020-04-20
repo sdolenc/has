@@ -49,24 +49,24 @@ RUN apk add --no-cache \
         vim=8.2.0-r0 `# vim=8.2` \
         yarn=1.19.2-r0 \
         zip=3.0-r7 \
-        zsh=5.7.1-r0; \
+        zsh=5.7.1-r0 && \
     \
     npm install -g \
         brunch@"=3.0.0" \
         heroku@"=7.39.3" \
         netlify-cli@="2.46.0" `# netlify=2.46.0` \
-        serverless@="1.67.3" `# sls=1.67.3`; \
+        serverless@="1.67.3" `# sls=1.67.3` && \
     \
     commit="87b16eb" `# bats=1.2.0`; \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
-    "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    "bats-core-bats-core-${commit}/install.sh" /usr/local && \
     \
     brew=2.2.13; \
     git clone --branch ${brew} https://github.com/Homebrew/brew; \
     ln -s $(which bash) /bin/bash; \
-    eval $(brew/bin/brew shellenv); \
-    ln -s /brew/bin/brew /usr/local/bin/brew; \
-    brew --version; \
+    eval $(brew/bin/brew shellenv) && \
+    ln -s /brew/bin/brew /usr/local/bin/brew && \
+    brew --version && \
     \
     gcloud=289.0.0; \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \

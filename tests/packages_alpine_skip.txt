@@ -1,3 +1,8 @@
+# not pre-installed to container
+# repository cloned just-in-time
+# todo: write custom test
+has
+
 # non-alpine packages
 apt
 apt-get
@@ -22,7 +27,6 @@ gem
 groovy
 grunt
 gulp
-has
 kotlin
 lein
 node
