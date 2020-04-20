@@ -1,6 +1,5 @@
 # not pre-installed to container
-# repository cloned just-in-time
-# todo: write custom test
+# repository cloned just-in-time during CI
 has
 
 # non-alpine packages

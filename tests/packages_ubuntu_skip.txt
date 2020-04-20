@@ -1,6 +1,5 @@
 # not pre-installed to container
-# repository cloned just-in-time
-# todo: write custom test
+# repository cloned just-in-time during CI
 has
 
 # Tests are run as admin in CI. Code requires an extra
@@ -10,8 +9,8 @@ has
 code
 
 # todo: add to test container
-kotlin
 go
+kotlin
 mvn
 sbt
 
