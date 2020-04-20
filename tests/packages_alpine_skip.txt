@@ -29,7 +29,6 @@ grunt
 gulp
 kotlin
 lein
-node
 perl6
 rake
 sbt

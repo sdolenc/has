@@ -31,7 +31,7 @@ RUN apk add --no-cache \
         mercurial=5.3.2-r0 `# hg=5.3.2` \
         nano=4.6-r0 \
         ncurses=6.1_p20200118-r3 `#tput:todo` \
-        npm `# npm=6.13.4 ` \
+        npm=12.15.0-r1 `# npm=6.13.4 # node=12.15.0` \
         openjdk11=11.0.5_p10-r0 `# java=11.0.5` \
         perl=5.30.1-r0 ` # perl=30` \
         php7=7.3.17-r0 `# php=7.3.17 ` \
@@ -80,7 +80,7 @@ RUN apk add --no-cache \
     curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz; \
     ln -s "/hub-linux-386-${hub}/bin/hub" /usr/local/bin/hub; \
     \
-    `# javac=11.0.6`; \
+    `# javac=11.0.5`; \
     ln -s "/usr/lib/jvm/java-11-openjdk/bin/javac" /usr/local/bin/javac; \
     \
     netlifyctl=0.4.0; \
