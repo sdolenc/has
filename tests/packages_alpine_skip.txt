@@ -23,8 +23,6 @@ groovy
 grunt
 gulp
 has
-java
-javac
 kotlin
 lein
 node

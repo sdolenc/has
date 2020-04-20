@@ -10,7 +10,6 @@ mvn
 netlify
 sbt
 sls
-subl
 
 # installed on container (and has confirms), but
 # todo: has shows EMPTY version string on container
