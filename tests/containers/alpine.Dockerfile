@@ -92,6 +92,7 @@ RUN apk add --no-cache \
     curl -L "https://github.com/JetBrains/kotlin/releases/download/v${kotlin}/kotlin-compiler-${kotlin}.zip" -o /kotlin.zip; \
     unzip kotlin.zip && rm kotlin.zip; \
     ln -s /kotlinc/bin/kotlin /usr/local/bin/kotlin; \
+    ln -s /kotlinc/bin/kotlinc /usr/local/bin/kotlinc; \
     \
     netlifyctl=0.4.0; \
     curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
