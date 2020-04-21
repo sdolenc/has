@@ -25,7 +25,6 @@ eb
 lein
 perl6
 rake
-sbt
 scala
 unar
 

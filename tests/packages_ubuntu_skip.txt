@@ -8,12 +8,6 @@ has
 # todo: (or) have container alias command w/ additional param
 code
 
-# todo: add to test container
-go
-kotlin
-mvn
-sbt
-
 # installed on container (and has confirms), but
 # todo: has shows EMPTY version string on container
 awk
