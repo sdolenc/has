@@ -1,11 +1,8 @@
-# not pre-installed to container
-# repository cloned just-in-time during CI
+# Not pre-installed to container, but repository cloned just-in-time during CI
 has
 
-# Tests are run as admin in CI. Code requires an extra
-# paramater to run as admin.
-# todo: (ideal) update has to add the param (always or conditionally for admin)
-# todo: (or) have container alias command w/ additional param
+# Tests are run as admin in CI. Code requires an extra paramater to get version as admin.
+# todo: add --user-data-dir=/tmp for code when has is run as admin
 code
 
 # installed on container (and has confirms), but

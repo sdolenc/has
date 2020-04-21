@@ -12,7 +12,7 @@ FROM ubuntu:bionic-20200311
 #       perl=26
 #       sed=4.4
 #       tar=1.29
-#       tput
+#       tput #todo
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
         ack=2.22* \
         ant=1.10.5* \
@@ -78,6 +78,12 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     eval $(brew/bin/brew shellenv) && \
     ln -s /brew/bin/brew /usr/local/bin/brew && \
     brew --version && \
+    \
+    code=1.44.2 && \
+    curl -L "https://az764295.vo.msecnd.net/stable/ff915844119ce9485abfe8aa9076ec76b5300ddd/code_${code}-1587059832_amd64.deb" --output code_${code}.deb && \
+    `# installing missing package(s) requires apt update which is the first done above` \
+    dpkg -i code_${code}.deb || apt-get install -f -y && \
+    rm -f code_${code}.deb && \
     \
     commit="102025c" `# eb=3.18.0` && \
     curl -L "https://github.com/aws/aws-elastic-beanstalk-cli-setup/tarball/${commit}" | tar xz && \
