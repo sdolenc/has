@@ -22,8 +22,6 @@ ant
 autojump
 aws
 eb
-gem
-groovy
 kotlin
 lein
 perl6
