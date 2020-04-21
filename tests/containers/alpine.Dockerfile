@@ -88,6 +88,11 @@ RUN apk add --no-cache \
     `# javac=11.0.5`; \
     ln -s "/usr/lib/jvm/java-11-openjdk/bin/javac" /usr/local/bin/javac; \
     \
+    kotlin=1.3.72; \
+    curl -L "https://github.com/JetBrains/kotlin/releases/download/v${kotlin}/kotlin-compiler-${kotlin}.zip" -o /kotlin.zip; \
+    unzip kotlin.zip && rm kotlin.zip; \
+    ln -s /kotlinc/bin/kotlin /usr/local/bin/kotlin; \
+    \
     netlifyctl=0.4.0; \
     curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
     \

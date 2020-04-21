@@ -92,6 +92,11 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     hub=2.14.2; \
     curl -fsSL "https://github.com/github/hub/raw/master/script/get" | bash -s ${hub}; \
     \
+    kotlin=1.3.72; \
+    curl -L "https://github.com/JetBrains/kotlin/releases/download/v${kotlin}/kotlin-compiler-${kotlin}.zip" -o /kotlin.zip; \
+    unzip kotlin.zip && rm kotlin.zip; \
+    ln -s /kotlinc/bin/kotlin /usr/local/bin/kotlin; \
+    \
     netlifyctl=0.4.0; \
     curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
     \
