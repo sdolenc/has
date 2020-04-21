@@ -38,6 +38,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         leiningen `# lein=2.8.1` \
         locales `# required for brew` \
         make=4.1* \
+        maven=3.6.0* `# mvn=3.6.0` \
         mercurial `# hg=4.5.3` \
         nano=2.9.3* \
         openjdk-11-jdk-headless `# java=11.0.6 # javac=11.0.6` \
