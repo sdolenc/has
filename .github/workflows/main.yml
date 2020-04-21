@@ -38,7 +38,7 @@ jobs:
     strategy:
       matrix:
         container:
-          #- ubuntu # uses ubuntu:bionic-20200311 which is ubuntu 18.04
+          - ubuntu # uses ubuntu:bionic-20200311 which is ubuntu 18.04
           - alpine # uses bash:5.0.16 which is alpine 3.11
 
     container: sdolenc/testing-has:${{ matrix.container }}
