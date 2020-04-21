@@ -68,7 +68,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         zsh=5.4.2*; \
     \
     commit="87b16eb" `# bats=1.2.0`; \
-    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
+    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}"  ; \
     "bats-core-bats-core-${commit}/install.sh" /usr/local; \
     \
     brew=2.2.13; \
@@ -103,6 +103,11 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     rg=12.0.1; \
     curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz; \
     ln -s "/ripgrep-${rg}-x86_64-unknown-linux-musl/rg" /usr/local/bin/rg; \
+    \
+    sbt=1.3.4; \
+    curl -L "https://piccolo.link/sbt-${sbt}.tgz" | tar xz; \
+    ln -s /sbt/bin/sbt /usr/local/bin/sbt; \
+    sbt --version && sbt --version; \
     \
     add-apt-repository -y ppa:longsleep/golang-backports `#go`; \
     curl -sL https://deb.nodesource.com/setup_12.x | bash - `#node and npm`;\

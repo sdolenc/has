@@ -100,6 +100,11 @@ RUN apk add --no-cache \
     curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz; \
     ln -s "/ripgrep-${rg}-x86_64-unknown-linux-musl/rg" /usr/local/bin/rg; \
     \
+    sbt=1.3.4; \
+    curl -L "https://piccolo.link/sbt-${sbt}.tgz" | tar xz; \
+    ln -s /sbt/bin/sbt /usr/local/bin/sbt; \
+    sbt --version && sbt --version; \
+    \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories; \
     apk add --no-cache \
         podman=1.9.0-r0
