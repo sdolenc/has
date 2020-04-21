@@ -104,12 +104,14 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz; \
     ln -s "/ripgrep-${rg}-x86_64-unknown-linux-musl/rg" /usr/local/bin/rg; \
     \
+    add-apt-repository -y ppa:longsleep/golang-backports `#go`; \
     curl -sL https://deb.nodesource.com/setup_12.x | bash - `#node and npm`;\
     add-apt-repository -y ppa:ondrej/php `#php5`; \
     add-apt-repository -y ppa:projectatomic/ppa `#podman`; \
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - `#subl`; \
     add-apt-repository -y "deb https://download.sublimetext.com/ apt/stable/" `#subl`; \
     apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
+        golang-go=2:1.14* `# go=1.14.2` \
         nodejs=12.16.2* `# node=12.16.2 # npm=6.14.4` \
         php5.6=5.6.40* `# php5=5.6.40` \
         podman=1.6.2* \
