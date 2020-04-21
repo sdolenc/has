@@ -76,6 +76,11 @@ RUN apk add --no-cache \
     gor=1.0.0; \
     curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin; \
     \
+    groovy=3.0.3; \
+    curl -L "https://dl.bintray.com/groovy/maven/apache-groovy-binary-${groovy}.zip" -o /groovy.zip; \
+    unzip groovy.zip && rm groovy.zip; \
+    ln -s "/groovy-3.0.3/bin/groovy" /usr/local/bin/groovy; \
+    \
     hub=2.14.2; \
     curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz; \
     ln -s "/hub-linux-386-${hub}/bin/hub" /usr/local/bin/hub; \
