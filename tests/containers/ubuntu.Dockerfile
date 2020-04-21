@@ -66,64 +66,64 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         xz-utils `# xz=5.2.2` \
         yarn `# yarn=0.32` \
         zip=3.0* \
-        zsh=5.4.2*; \
+        zsh=5.4.2* && \
     \
-    commit="87b16eb" `# bats=1.2.0`; \
-    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
-    "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    commit="87b16eb" `# bats=1.2.0` && \
+    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz && \
+    "bats-core-bats-core-${commit}/install.sh" /usr/local && \
     \
-    brew=2.2.13; \
-    git clone --branch ${brew} https://github.com/Homebrew/brew; \
-    locale-gen en_US en_US.UTF-8; \
-    eval $(brew/bin/brew shellenv); \
-    ln -s /brew/bin/brew /usr/local/bin/brew; \
-    brew --version; \
+    brew=2.2.13 && \
+    git clone --branch ${brew} https://github.com/Homebrew/brew && \
+    locale-gen en_US en_US.UTF-8 && \
+    eval $(brew/bin/brew shellenv) && \
+    ln -s /brew/bin/brew /usr/local/bin/brew && \
+    brew --version && \
     \
-    commit="102025c" `# eb=3.18.0`; \
-    curl -L "https://github.com/aws/aws-elastic-beanstalk-cli-setup/tarball/${commit}" | tar xz; \
-    "aws-aws-elastic-beanstalk-cli-setup-${commit}/scripts/bundled_installer"; \
-    ln -s /root/.ebcli-virtual-env/executables/eb /usr/local/bin/eb; \
+    commit="102025c" `# eb=3.18.0` && \
+    curl -L "https://github.com/aws/aws-elastic-beanstalk-cli-setup/tarball/${commit}" | tar xz && \
+    "aws-aws-elastic-beanstalk-cli-setup-${commit}/scripts/bundled_installer" && \
+    ln -s /root/.ebcli-virtual-env/executables/eb /usr/local/bin/eb && \
     \
-    gcloud=289.0.0; \
-    curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \
+    gcloud=289.0.0 && \
+    curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz && \
     \
-    gor=1.0.0; \
-    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin; \
+    gor=1.0.0 && \
+    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin && \
     \
-    hub=2.14.2; \
-    curl -fsSL "https://github.com/github/hub/raw/master/script/get" | bash -s ${hub}; \
+    hub=2.14.2 && \
+    curl -fsSL "https://github.com/github/hub/raw/master/script/get" | bash -s ${hub} && \
     \
-    kotlin=1.3.72; \
-    curl -L "https://github.com/JetBrains/kotlin/releases/download/v${kotlin}/kotlin-compiler-${kotlin}.zip" -o /kotlin.zip; \
-    unzip kotlin.zip && rm kotlin.zip; \
-    ln -s /kotlinc/bin/kotlin /usr/local/bin/kotlin; \
-    ln -s /kotlinc/bin/kotlinc /usr/local/bin/kotlinc; \
+    kotlin=1.3.72 && \
+    curl -L "https://github.com/JetBrains/kotlin/releases/download/v${kotlin}/kotlin-compiler-${kotlin}.zip" -o /kotlin.zip && \
+    unzip kotlin.zip && rm kotlin.zip && \
+    ln -s /kotlinc/bin/kotlin /usr/local/bin/kotlin && \
+    ln -s /kotlinc/bin/kotlinc /usr/local/bin/kotlinc && \
     \
-    netlifyctl=0.4.0; \
-    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
+    netlifyctl=0.4.0 && \
+    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin && \
     \
-    rg=12.0.1; \
-    curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz; \
-    ln -s "/ripgrep-${rg}-x86_64-unknown-linux-musl/rg" /usr/local/bin/rg; \
+    rg=12.0.1 && \
+    curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz && \
+    ln -s "/ripgrep-${rg}-x86_64-unknown-linux-musl/rg" /usr/local/bin/rg && \
     \
-    sbt=1.3.4; \
-    curl -L "https://piccolo.link/sbt-${sbt}.tgz" | tar xz; \
-    ln -s /sbt/bin/sbt /usr/local/bin/sbt; \
-    sbt --version && sbt --version; \
+    sbt=1.3.4 && \
+    curl -L "https://piccolo.link/sbt-${sbt}.tgz" | tar xz && \
+    ln -s /sbt/bin/sbt /usr/local/bin/sbt && \
+    sbt --version && sbt --version && \
     \
-    add-apt-repository -y ppa:longsleep/golang-backports `#go`; \
-    curl -sL https://deb.nodesource.com/setup_12.x | bash - `#node and npm`;\
-    add-apt-repository -y ppa:ondrej/php `#php5`; \
-    add-apt-repository -y ppa:projectatomic/ppa `#podman`; \
-    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - `#subl`; \
-    add-apt-repository -y "deb https://download.sublimetext.com/ apt/stable/" `#subl`; \
+    add-apt-repository -y ppa:longsleep/golang-backports `#go` && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - `#node and npm` &&\
+    add-apt-repository -y ppa:ondrej/php `#php5` && \
+    add-apt-repository -y ppa:projectatomic/ppa `#podman` && \
+    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - `#subl` && \
+    add-apt-repository -y "deb https://download.sublimetext.com/ apt/stable/" `#subl` && \
     apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
         golang-go=2:1.14* `# go=1.14.2` \
         nodejs=12.16.2* `# node=12.16.2 # npm=6.14.4` \
         php5.6=5.6.40* `# php5=5.6.40` \
         podman=1.6.2* \
-        sublime-text=3211 `# subl=3211`; \
-    ln -s /usr/bin/php5.6 /usr/bin/php5; \
+        sublime-text=3211 `# subl=3211` && \
+    ln -s /usr/bin/php5.6 /usr/bin/php5 && \
     \
     npm install --global \
         brunch@"=3.0.0" \
@@ -131,7 +131,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         gulp-cli@"=2.2.0" \
         heroku@"=7.39.3" \
         netlify-cli@"=2.46.0" \
-        serverless@"=1.67.3" `# sls=1.67.3`; \
+        serverless@"=1.67.3" `# sls=1.67.3` && \
     \
     apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
