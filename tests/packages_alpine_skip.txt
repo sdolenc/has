@@ -15,13 +15,16 @@ subl
 #  pinky, pr, ptx, runcon, stdbuf, tsort, users, vdir, who
 gnu_coreutils
 
+# building
+aws
+lein
+
 # todo: add to test container
 ag
 ant
 autojump
-aws
 eb
-lein
+
 perl6
 rake
 scala

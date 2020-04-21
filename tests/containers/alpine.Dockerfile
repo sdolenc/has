@@ -49,7 +49,10 @@ RUN apk add --no-cache \
         vim=8.2.0-r0 `# vim=8.2` \
         yarn=1.19.2-r0 \
         zip=3.0-r7 \
-        zsh=5.7.1-r0; \
+        zsh=5.7.1-r0 && \
+    \
+    # required for brew and lein
+    ln -s $(which bash) /bin/bash && \
     \
     npm install --global \
         brunch@"=3.0.0" \
@@ -57,57 +60,59 @@ RUN apk add --no-cache \
         gulp-cli@"=2.2.0" \
         heroku@"=7.39.3" \
         netlify-cli@"=2.46.0" \
-        serverless@"=1.67.3" `# sls=1.67.3`; \
+        serverless@"=1.67.3" `# sls=1.67.3` && \
     \
-    commit="87b16eb" `# bats=1.2.0`; \
-    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz; \
-    "bats-core-bats-core-${commit}/install.sh" /usr/local; \
+    commit="87b16eb" `# bats=1.2.0` && \
+    curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz && \
+    "bats-core-bats-core-${commit}/install.sh" /usr/local && \
     \
-    brew=2.2.13; \
-    git clone --branch ${brew} https://github.com/Homebrew/brew; \
-    ln -s $(which bash) /bin/bash; \
-    eval $(brew/bin/brew shellenv); \
-    ln -s /brew/bin/brew /usr/local/bin/brew; \
-    brew --version; \
+    brew=2.2.13 && \
+    git clone --branch ${brew} https://github.com/Homebrew/brew && \
+    eval $(brew/bin/brew shellenv) && \
+    ln -s /brew/bin/brew /usr/local/bin/brew && \
+    brew --version && \
     \
-    gcloud=289.0.0; \
-    curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz; \
+    gcloud=289.0.0 && \
+    curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz && \
     \
-    gor=1.0.0; \
-    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin; \
+    gor=1.0.0 && \
+    curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin && \
     \
-    groovy=3.0.3; \
-    curl -L "https://dl.bintray.com/groovy/maven/apache-groovy-binary-${groovy}.zip" -o /groovy.zip; \
-    unzip groovy.zip && rm groovy.zip; \
-    ln -s "/groovy-3.0.3/bin/groovy" /usr/local/bin/groovy; \
+    groovy=3.0.3 && \
+    curl -L "https://dl.bintray.com/groovy/maven/apache-groovy-binary-${groovy}.zip" -o /groovy.zip && \
+    unzip groovy.zip && rm groovy.zip && \
+    ln -s "/groovy-3.0.3/bin/groovy" /usr/local/bin/groovy && \
     \
-    hub=2.14.2; \
-    curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz; \
-    ln -s "/hub-linux-386-${hub}/bin/hub" /usr/local/bin/hub; \
+    hub=2.14.2 && \
+    curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz && \
+    ln -s "/hub-linux-386-${hub}/bin/hub" /usr/local/bin/hub && \
     \
-    `# javac=11.0.5`; \
-    ln -s "/usr/lib/jvm/java-11-openjdk/bin/javac" /usr/local/bin/javac; \
+    `# javac=11.0.5` && \
+    ln -s "/usr/lib/jvm/java-11-openjdk/bin/javac" /usr/local/bin/javac && \
     \
-    kotlin=1.3.72; \
-    curl -L "https://github.com/JetBrains/kotlin/releases/download/v${kotlin}/kotlin-compiler-${kotlin}.zip" -o /kotlin.zip; \
-    unzip kotlin.zip && rm kotlin.zip; \
-    ln -s /kotlinc/bin/kotlin /usr/local/bin/kotlin; \
-    ln -s /kotlinc/bin/kotlinc /usr/local/bin/kotlinc; \
+    kotlin=1.3.72 && \
+    curl -L "https://github.com/JetBrains/kotlin/releases/download/v${kotlin}/kotlin-compiler-${kotlin}.zip" -o /kotlin.zip && \
+    unzip kotlin.zip && rm kotlin.zip && \
+    ln -s /kotlinc/bin/kotlin /usr/local/bin/kotlin && \
+    ln -s /kotlinc/bin/kotlinc /usr/local/bin/kotlinc && \
     \
-    netlifyctl=0.4.0; \
-    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin; \
+    netlifyctl=0.4.0 && \
+    curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin && \
     \
-    rg=12.0.1; \
-    curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz; \
-    ln -s "/ripgrep-${rg}-x86_64-unknown-linux-musl/rg" /usr/local/bin/rg; \
+    rg=12.0.1 && \
+    curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz && \
+    ln -s "/ripgrep-${rg}-x86_64-unknown-linux-musl/rg" /usr/local/bin/rg && \
     \
-    sbt=1.3.4; \
-    curl -L "https://piccolo.link/sbt-${sbt}.tgz" | tar xz; \
-    ln -s /sbt/bin/sbt /usr/local/bin/sbt; \
-    sbt --version && sbt --version; \
+    sbt=1.3.4 && \
+    curl -L "https://piccolo.link/sbt-${sbt}.tgz" | tar xz && \
+    ln -s /sbt/bin/sbt /usr/local/bin/sbt && \
+    sbt --version && sbt --version && \
     \
-    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories; \
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories `#aws` && \
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories `#lein, podman` && \
     apk add --no-cache \
+        aws-cli=1.18.39-r0 \
+        leiningen=2.9.1-r0 `# lein=2.9.1` \
         podman=1.9.0-r0
 
 ENV PATH /google-cloud-sdk/bin:$PATH
