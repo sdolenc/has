@@ -22,7 +22,6 @@ ant
 autojump
 aws
 eb
-kotlin
 lein
 perl6
 rake
