@@ -13,7 +13,7 @@ FROM bash:5.0.16
 #       xz
 RUN apk add --no-cache \
         ack=3.2.0-r0 \
-        apache2-utils `# ab=2.3` \
+        apache2-utils~=2.4 `# ab=2.3` \
         apache-ant=1.10.7-r0 `# ant=1.10.7` \
         build-base libffi-dev openssl-dev `# required for eb` \
         curl=7.67.0-r0 \
