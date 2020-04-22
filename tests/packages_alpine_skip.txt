@@ -15,19 +15,6 @@ subl
 #  pinky, pr, ptx, runcon, stdbuf, tsort, users, vdir, who
 gnu_coreutils
 
-# todo: add to test container
-ag
-ant
-autojump
-eb
-perl6
-scala
-unar
-
-# runs best on alpine 3.8 or earlier (due to specific versions of dependencies during compilation), but we're using 3.11
-# todo: consider compiling for 3.11 by forking https://github.com/sgerrand/alpine-pkg-php5
-php5
-
 # installed on container (and has confirms), but
 # todo: has shows EMPTY version string on container
 awk
@@ -45,3 +32,35 @@ perl
 # installed on container, but
 # todo: has reports command not found
 gor
+
+# ---------------------------------------------------------------
+# todo: add packages below this line to the alpine test container
+# ---------------------------------------------------------------
+
+# I couldn't find an easy way of installing this to alpine.
+# todo: keep looking to find a straightforward way to add it to alpine or
+# todo: create a repository that compiles and publishes the a binary for alpine
+#  resources: https://github.com/ggreer/the_silver_searcher and https://github.com/Ketouem/ag-alpine
+ag
+
+# building
+ant
+
+autojump
+
+# todo: install on alpine starting with these resources.
+#  https://github.com/aws/aws-elastic-beanstalk-cli/issues/11
+#  https://github.com/aws/aws-elastic-beanstalk-cli
+#  https://github.com/aws/aws-elastic-beanstalk-cli-setup
+#  We may need to open a new issue asking for guidance regarding requireed packages
+eb
+
+perl6
+
+# Existing builds work best on alpine 3.8 or earlier (due to specific dependency
+# versions established during compilation). We're using alpine 3.11
+# todo: consider compiling a version for 3.11. Resource: https://github.com/sgerrand/alpine-pkg-php5
+php5
+
+scala
+unar

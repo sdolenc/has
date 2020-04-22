@@ -14,6 +14,7 @@ FROM bash:5.0.16
 RUN apk add --no-cache \
         ack=3.2.0-r0 \
         apache2-utils `# ab=2.3` \
+        apache-ant=1.10.7-r0 `# ant=1.10.7` \
         curl=7.67.0-r0 \
         bzr=2.7.0-r1 \
         docker=19.03.5-r0 \
@@ -47,7 +48,7 @@ RUN apk add --no-cache \
         subversion=1.12.2-r1 `# svn=1.12.2` \
         sudo=1.8.31-r0 \
         tree=1.8.0-r0 \
-        vim=8.2.0-r0 `# vim=8.2` \
+        vim~=8.2 \
         yarn=1.19.2-r0 \
         zip=3.0-r7 \
         zsh=5.7.1-r0 && \
