@@ -34,11 +34,6 @@ perl
 # todo: has reports command not found
 gor
 
-# building ...
-aws
-eb
-http
-
 # --------------------------------------------------------------------------
 # tools below have not be added to the alpine test container image.
 # todo: we may need to compile executable binaries that run on alpine 3.11
