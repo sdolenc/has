@@ -43,7 +43,7 @@ RUN apk add --no-cache \
         ruby=2.6.6-r2 `# gem=3.0.3` \
         ruby-bundler=2.0.2-r1 `# bundle=2.0.2` \
         ruby-bigdecimal ruby-json `# required for brew` \
-        ruby-rake=2.6.6-r2 `# rake=2.6.6` \
+        ruby-rake=2.6.6-r2 `# rake=12.3.3` \
         subversion=1.12.2-r1 `# svn=1.12.2` \
         sudo=1.8.31-r0 \
         tree=1.8.0-r0 \
