@@ -10,15 +10,10 @@ subl
 
 # gnu_coreutils shows as installed, but is not on alpine.
 # todo: We should change the command we use for this to
-# something busybox doesn't also implement. Examples:
+#  something busybox doesn't also implement. Examples:
 #  chcon, csplit, dir, dircolors, fmt, join, logname, pathchk,
 #  pinky, pr, ptx, runcon, stdbuf, tsort, users, vdir, who
 gnu_coreutils
-
-# currently building...
-aws
-lein
-rake ruby-rake=2.6.6-r2
 
 # todo: add to test container
 ag
@@ -29,7 +24,7 @@ perl6
 scala
 unar
 
-# runs best on alpine 3.8 or earlier, but we're using 3.11
+# runs best on alpine 3.8 or earlier (due to specific versions of dependencies during compilation), but we're using 3.11
 # todo: consider compiling for 3.11 by forking https://github.com/sgerrand/alpine-pkg-php5
 php5
 
