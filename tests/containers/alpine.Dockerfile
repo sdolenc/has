@@ -66,9 +66,9 @@ RUN apk add --no-cache \
     \
     autojump=22.5.3 && \
     curl -L "https://github.com/wting/autojump/archive/release-v${autojump}.tar.gz" | tar xz && \
-    pushd "autojump-release-v${autojump}" && \
+    cd "autojump-release-v${autojump}" && \
     SHELL=bash ./install.py && \
-    popd && \
+    cd / && \
     ln -s ~/.autojump/bin/autojump /usr/local/bin/autojump && \
     \
     commit="87b16eb" `# bats=1.2.0` && \
