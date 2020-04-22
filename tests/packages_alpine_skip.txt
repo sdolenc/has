@@ -13,6 +13,7 @@ subl
 #  something busybox doesn't also implement. Examples:
 #  chcon, csplit, dir, dircolors, fmt, join, logname, pathchk,
 #  pinky, pr, ptx, runcon, stdbuf, tsort, users, vdir, who
+# Then we can move this to the "non-alpine packages" list above.
 gnu_coreutils
 
 # installed on container (and has confirms), but
@@ -33,32 +34,35 @@ perl
 # todo: has reports command not found
 gor
 
-# ---------------------------------------------------------------
-# todo: add packages below this line to the alpine test container
-# ---------------------------------------------------------------
+# --------------------------------------------------------------------------
+# tools below this line have not be added to the alpine test container image
+# todo: install packages
+# --------------------------------------------------------------------------
 
-# I couldn't find an easy way of installing this to alpine.
-# todo: keep looking to find a straightforward way to add it to alpine or
-# todo: create a repository that compiles and publishes the a binary for alpine
-#  resources: https://github.com/ggreer/the_silver_searcher and https://github.com/Ketouem/ag-alpine
-ag
-
-# building...
-autojump
-perl6
-scala
-
-# todo: install on alpine starting with these resources.
+# todo: install on alpine starting with:
 #  https://github.com/aws/aws-elastic-beanstalk-cli/issues/11
 #  https://github.com/aws/aws-elastic-beanstalk-cli
 #  https://github.com/aws/aws-elastic-beanstalk-cli-setup
-#  We may need to open a new issue asking for guidance regarding requireed packages
+# We may need to open a new issue asking for guidance regarding required packages
 eb
 
-# Existing builds work best on alpine 3.8 or earlier (due to specific dependency
-# versions established during compilation). We're using alpine 3.11
-# todo: consider compiling a version for 3.11. Resource: https://github.com/sgerrand/alpine-pkg-php5
+# --------------------------------------------------------------------------
+# tools below this line do not have apk installers nor executable binaries that run on alpine 3.11
+# todo: create or fork a repository that compiles and publishes an executable binary for alpine 3.11
+# --------------------------------------------------------------------------
+
+# todo: compile binary with help from:
+#  https://github.com/ggreer/the_silver_searcher
+#  https://github.com/Ketouem/ag-alpine
+ag
+
+# Existing builds work best on alpine 3.8 or earlier (due to specific
+# dependency versions established during compilation)
+# todo: compile binary with help from:
+#  https://github.com/sgerrand/alpine-pkg-php5
 php5
 
-#todo
+# todo: compile binary with help from:
+#  https://theunarchiver.com/command-line
+#  https://github.com/ashang/unar
 unar
