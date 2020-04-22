@@ -43,11 +43,9 @@ gor
 #  resources: https://github.com/ggreer/the_silver_searcher and https://github.com/Ketouem/ag-alpine
 ag
 
-# todo:
-# clone ~/.autojump/bin
-# SHELL=bash ./install.py
-# ls -s ~/.autojump/bin/autojump
+# building...
 autojump
+perl6
 
 # todo: install on alpine starting with these resources.
 #  https://github.com/aws/aws-elastic-beanstalk-cli/issues/11
@@ -55,12 +53,6 @@ autojump
 #  https://github.com/aws/aws-elastic-beanstalk-cli-setup
 #  We may need to open a new issue asking for guidance regarding requireed packages
 eb
-
-# todo:
-# curl apk from https://github.com/nxadm/rakudo-pkg/releases
-# apk add --allow-untrusted
-# ln -s /opt/rakudo-pkg/bin/perl6
-perl6
 
 # Existing builds work best on alpine 3.8 or earlier (due to specific dependency
 # versions established during compilation). We're using alpine 3.11

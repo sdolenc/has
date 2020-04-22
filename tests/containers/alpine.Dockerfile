@@ -64,6 +64,11 @@ RUN apk add --no-cache \
         netlify-cli@"=2.46.0" \
         serverless@"=1.67.3" `# sls=1.67.3` && \
     \
+    autojump=22.5.3 && \
+    curl -L "https://github.com/wting/autojump/archive/release-v${autojump}.tar.gz" | tar xz && \
+    SHELL=bash "/autojump-release-v${autojump}/install.py" && \
+    ln -s ~/.autojump/bin/autojump /usr/local/bin/autojump && \
+    \
     commit="87b16eb" `# bats=1.2.0` && \
     curl -L "https://github.com/bats-core/bats-core/tarball/${commit}" | tar xz && \
     "bats-core-bats-core-${commit}/install.sh" /usr/local && \
@@ -100,6 +105,11 @@ RUN apk add --no-cache \
     \
     netlifyctl=0.4.0 && \
     curl -L "https://github.com/netlify/netlifyctl/releases/download/v${netlifyctl}/netlifyctl-linux-amd64-${netlifyctl}.tar.gz" | tar xz --directory /usr/local/bin && \
+    \
+    perl6=2020.02.1-04 && \
+    curl -L "https://github.com/nxadm/rakudo-pkg/releases/download/v${perl6}/rakudo-pkg-Alpine3.11_${perl6}_x86_64.apk" --output perl6.apk && \
+    apk add --allow-untrusted perl6.apk && rm perl6.apk && \
+    ln -s /opt/rakudo-pkg/bin/perl6 /usr/local/bin/perl6 && \
     \
     rg=12.0.1 && \
     curl -L "https://github.com/BurntSushi/ripgrep/releases/download/${rg}/ripgrep-${rg}-x86_64-unknown-linux-musl.tar.gz" | tar xz && \
