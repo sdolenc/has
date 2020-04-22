@@ -9,3 +9,8 @@ code
 # todo: has shows EMPTY version string on container
 awk
 groovy
+
+# --------------------------------------------------------------------------
+# tools below have not be added to the ubuntu test container image.
+# --------------------------------------------------------------------------
+
