@@ -43,9 +43,10 @@ gor
 #  resources: https://github.com/ggreer/the_silver_searcher and https://github.com/Ketouem/ag-alpine
 ag
 
-# building
-ant
-
+# todo:
+# clone ~/.autojump/bin
+# SHELL=bash ./install.py
+# ls -s ~/.autojump/bin/autojump
 autojump
 
 # todo: install on alpine starting with these resources.
@@ -55,6 +56,10 @@ autojump
 #  We may need to open a new issue asking for guidance regarding requireed packages
 eb
 
+# todo:
+# curl apk from https://github.com/nxadm/rakudo-pkg/releases
+# apk add --allow-untrusted
+# ln -s /opt/rakudo-pkg/bin/perl6
 perl6
 
 # Existing builds work best on alpine 3.8 or earlier (due to specific dependency
@@ -62,5 +67,6 @@ perl6
 # todo: consider compiling a version for 3.11. Resource: https://github.com/sgerrand/alpine-pkg-php5
 php5
 
+#todo
 scala
 unar
