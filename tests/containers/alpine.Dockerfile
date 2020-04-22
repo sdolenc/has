@@ -87,6 +87,7 @@ RUN apk add --no-cache \
     \
     gcloud=289.0.0 && \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz && \
+    ln -s /google-cloud-sdk/bin/gcloud /usr/local/bin/gcloud && \
     \
     gor=1.0.0 && \
     curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin && \
@@ -138,5 +139,3 @@ RUN apk add --no-cache \
     apk add --no-cache \
         leiningen=2.9.1-r0 `# lein=2.9.1` \
         podman=1.9.0-r0
-
-ENV PATH /google-cloud-sdk/bin:$PATH

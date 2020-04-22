@@ -92,6 +92,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     \
     gcloud=289.0.0 && \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz && \
+    ln -s /google-cloud-sdk/bin/gcloud /usr/local/bin/gcloud && \
     \
     gor=1.0.0 && \
     curl -L "https://github.com/buger/goreplay/releases/download/v${gor}/gor_${gor}_x64.tar.gz" | tar xz --directory /usr/local/bin && \
@@ -140,5 +141,3 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         serverless@"=1.67.3" `# sls=1.67.3` && \
     \
     apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
-
-ENV PATH /google-cloud-sdk/bin:$PATH
