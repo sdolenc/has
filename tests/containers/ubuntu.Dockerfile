@@ -21,7 +21,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         aptitude=0.8.10* \
         autojump=22.5.0* \
         awscli=1.14.44* `# aws=1.14.44` \
-        build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev `# required for eb`\
+        build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev `# required for eb` \
         bzr=2.7.0+bzr6622-10 `# bzr=2.8.0` \
         curl=7.58.0* \
         docker.io `# docker=19.03.6` \

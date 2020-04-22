@@ -15,6 +15,7 @@ RUN apk add --no-cache \
         ack=3.2.0-r0 \
         apache2-utils `# ab=2.3` \
         apache-ant=1.10.7-r0 `# ant=1.10.7` \
+        build-base libffi-dev openssl-dev `# required for eb` \
         curl=7.67.0-r0 \
         bzr=2.7.0-r1 \
         docker=19.03.5-r0 \
@@ -24,7 +25,6 @@ RUN apk add --no-cache \
         git~=2.24.3 \
         go=1.13.4-r1 \
         gradle=5.6.4-r0 \
-        httpie=1.0.3-r1 `# http=1.0.3` \
         hugo=0.61.0-r0 \
         jq=1.6-r0 \
         make=4.2.1-r2 \
@@ -39,7 +39,7 @@ RUN apk add --no-cache \
         postgresql=12.2-r0 `# psql=12.2` \
         pv=1.6.6-r1 \
         python=2.7.16-r3 \
-        python3=3.8.2-r0 \
+        python3-dev=3.8.2-r0 \
         R=3.6.2-r0 \
         ruby=2.6.6-r2 `# gem=3.0.3` \
         ruby-bundler=2.0.2-r1 `# bundle=2.0.2` \
@@ -81,6 +81,10 @@ RUN apk add --no-cache \
     ln -s /brew/bin/brew /usr/local/bin/brew && \
     brew --version && \
     \
+    eb=3.18.0-1 && \
+    curl -L "https://github.com/sdolenc/aws-elastic-beanstalk-cli/archive/${eb}.tar.gz" | tar xz && \
+    pip3 install ./aws-elastic-beanstalk-cli-${eb} && \
+    \
     gcloud=289.0.0 && \
     curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${gcloud}-linux-x86_64.tar.gz" | tar xz && \
     \
@@ -91,6 +95,8 @@ RUN apk add --no-cache \
     curl -L "https://dl.bintray.com/groovy/maven/apache-groovy-binary-${groovy}.zip" -o /groovy.zip && \
     unzip groovy.zip && rm groovy.zip && \
     ln -s "/groovy-3.0.3/bin/groovy" /usr/local/bin/groovy && \
+    \
+    pip3 install httpie==2.1.0 `# http=2.1.0` && \
     \
     hub=2.14.2 && \
     curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz && \

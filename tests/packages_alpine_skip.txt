@@ -34,21 +34,13 @@ perl
 # todo: has reports command not found
 gor
 
-# --------------------------------------------------------------------------
-# tools below this line have not be added to the alpine test container image
-# todo: install packages
-# --------------------------------------------------------------------------
-
-# todo: install on alpine starting with:
-#  https://github.com/aws/aws-elastic-beanstalk-cli/issues/11
-#  https://github.com/aws/aws-elastic-beanstalk-cli
-#  https://github.com/aws/aws-elastic-beanstalk-cli-setup
-# We may need to open a new issue asking for guidance regarding required packages
+# building ...
 eb
+http
 
 # --------------------------------------------------------------------------
-# tools below this line do not have apk installers nor executable binaries that run on alpine 3.11
-# todo: create or fork a repository that compiles and publishes an executable binary for alpine 3.11
+# tools below have not be added to the alpine test container image.
+# todo: we may need to compile executable binaries that run on alpine 3.11
 # --------------------------------------------------------------------------
 
 # todo: compile binary with help from:
@@ -56,8 +48,7 @@ eb
 #  https://github.com/Ketouem/ag-alpine
 ag
 
-# Existing builds work best on alpine 3.8 or earlier (due to specific
-# dependency versions established during compilation)
+# apk available for alpine 3.8
 # todo: compile binary with help from:
 #  https://github.com/sgerrand/alpine-pkg-php5
 php5
