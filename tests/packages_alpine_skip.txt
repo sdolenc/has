@@ -35,6 +35,7 @@ perl
 gor
 
 # building ...
+aws
 eb
 http
 

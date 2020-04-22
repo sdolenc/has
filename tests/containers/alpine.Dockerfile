@@ -96,7 +96,9 @@ RUN apk add --no-cache \
     unzip groovy.zip && rm groovy.zip && \
     ln -s "/groovy-3.0.3/bin/groovy" /usr/local/bin/groovy && \
     \
-    pip3 install httpie==2.1.0 `# http=2.1.0` && \
+    pip3 install \
+        awscli==1.18.43 `# aws=1.18.43` \
+        httpie==2.1.0 `# http=2.1.0` && \
     \
     hub=2.14.2 && \
     curl -L "https://github.com/github/hub/releases/download/v${hub}/hub-linux-386-${hub}.tgz" | tar xz && \
@@ -132,10 +134,8 @@ RUN apk add --no-cache \
     curl -L "https://downloads.lightbend.com/scala/${scala}/scala-${scala}.tgz" | tar xz && \
     ln -s "/scala-${scala}/bin/scala" /usr/local/bin/scala && \
     \
-    echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories `#aws` && \
-    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories `#lein, podman` && \
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk add --no-cache \
-        aws-cli=1.18.39-r0 \
         leiningen=2.9.1-r0 `# lein=2.9.1` \
         podman=1.9.0-r0
 
