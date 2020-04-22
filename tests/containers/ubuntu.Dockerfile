@@ -81,7 +81,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     \
     code=1.44.2 && \
     curl -L "https://az764295.vo.msecnd.net/stable/ff915844119ce9485abfe8aa9076ec76b5300ddd/code_${code}-1587059832_amd64.deb" --output code_${code}.deb && \
-    `# installing missing package(s) requires apt update which is the first done above` \
+    `# installing missing dependencies requires apt update which is the first done above` \
     dpkg -i code_${code}.deb || apt-get install -f -y && \
     rm -f code_${code}.deb && \
     \

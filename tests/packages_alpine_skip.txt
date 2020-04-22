@@ -46,6 +46,7 @@ ag
 # building...
 autojump
 perl6
+scala
 
 # todo: install on alpine starting with these resources.
 #  https://github.com/aws/aws-elastic-beanstalk-cli/issues/11
@@ -60,5 +61,4 @@ eb
 php5
 
 #todo
-scala
 unar

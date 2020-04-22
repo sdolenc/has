@@ -66,7 +66,9 @@ RUN apk add --no-cache \
     \
     autojump=22.5.3 && \
     curl -L "https://github.com/wting/autojump/archive/release-v${autojump}.tar.gz" | tar xz && \
-    SHELL=bash "/autojump-release-v${autojump}/install.py" && \
+    pushd "autojump-release-v${autojump}" && \
+    SHELL=bash ./install.py && \
+    popd && \
     ln -s ~/.autojump/bin/autojump /usr/local/bin/autojump && \
     \
     commit="87b16eb" `# bats=1.2.0` && \
@@ -119,6 +121,10 @@ RUN apk add --no-cache \
     curl -L "https://piccolo.link/sbt-${sbt}.tgz" | tar xz && \
     ln -s /sbt/bin/sbt /usr/local/bin/sbt && \
     sbt --version && sbt --version && \
+    \
+    scala=2.12.11 && \
+    curl -L "https://downloads.lightbend.com/scala/${scala}/scala-${scala}.tgz" | tar xz && \
+    ln -s "/scala-${scala}/bin/scala" /usr/local/bin/scala && \
     \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories `#aws` && \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories `#lein, podman` && \
