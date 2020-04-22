@@ -39,7 +39,7 @@ RUN apk add --no-cache \
         postgresql=12.2-r0 `# psql=12.2` \
         pv=1.6.6-r1 \
         python=2.7.16-r3 \
-        python3-dev=3.8.2-r0 \
+        python3-dev=3.8.2-r0 `#python3=3.8.2` \
         R=3.6.2-r0 \
         ruby=2.6.6-r2 `# gem=3.0.3` \
         ruby-bundler=2.0.2-r1 `# bundle=2.0.2` \
