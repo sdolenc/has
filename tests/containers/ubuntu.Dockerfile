@@ -16,15 +16,15 @@ FROM ubuntu:bionic-20200311
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
         ack=2.22* \
         ant=1.10.5* \
-        apache2-utils `# ab=2.3` \
-        apt-utils=1.6.12 `# todo` \
+        apache2-utils=2.4* `# ab=2.3` \
+        apt-utils `# todo` \
         aptitude=0.8.10* \
         autojump=22.5.0* \
         awscli=1.14.44* `# aws=1.14.44` \
         build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev `# required for eb` \
         bzr=2.7.0+bzr6622-10 `# bzr=2.8.0` \
         curl=7.58.0* \
-        docker.io `# docker=19.03.6` \
+        docker.io=19.03.6* `# docker=19.03.6` \
         emacs=47.0 `# emacs=25.2.2` \
         file=1:5.32* \
         gcc=4:7.4.0-1ubuntu2.3 `# gcc=7.5.0` \
@@ -32,38 +32,38 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         gpg-agent `# todo:apt-key` \
         gradle=4.4.1* \
         groovy=2.4.16* \
-        httpie `# http=0.9.8` \
+        httpie=0.9.8* `# http=0.9.8` \
         hugo=0.40.1* \
         jq=1.5* \
-        leiningen `# lein=2.8.1` \
+        leiningen=2.8.1* `# lein=2.8.1` \
         locales `# required for brew` \
         make=4.1* \
         maven=3.6.0* `# mvn=3.6.0` \
-        mercurial `# hg=4.5.3` \
+        mercurial=4.5.3* `# hg=4.5.3` \
         nano=2.9.3* \
-        openjdk-11-jdk-headless `# java=11.0.6 # javac=11.0.6` \
+        openjdk-11-jdk-headless=11.0.7* `# java=11.0.7 # javac=11.0.7` \
         perl6=6.c-1 `# perl6=2018.03` \
         php=1:7.2+60ubuntu1 `# php=7.2.24` \
-        postgresql-client `# psql=10.12` \
+        postgresql-client=10+190* `# psql=10.12` \
         pv=1.6.6* \
         python=2.7.15~rc1-1 `# python=2.7.17` \
         python3=3.6.7-1~18.04 `# python3=3.6.9` \
-        r-cran-littler `# R=3.4.4` \
+        r-cran-littler=0.3.3* `# R=3.4.4` \
         rake=12.3.1* \
         ruby=1:2.5.1 \
-        ruby-bundler `# bundle=1.16.1` \
+        ruby-bundler=1.16.1* `# bundle=1.16.1` \
         rubygems `# gem=2.7.6` \
         scala=2.11.12* \
-        silversearcher-ag `# ag=2.1.0` \
-        software-properties-common=0.96.24.32.12 `# todo:add-apt-repository` \
-        subversion `# svn=1.9.7` \
+        silversearcher-ag=2.1.0* `# ag=2.1.0` \
+        software-properties-common `# todo:add-apt-repository` \
+        subversion=1.9.7* `# svn=1.9.7` \
         sudo=1.8.21* \
         tree=1.7.0* \
         unar=1.10.1* \
         unzip=6.0-21ubuntu1 `# unzip=6.00` \
         vim=2:8.0* \
         wget=1.19.4* \
-        xz-utils `# xz=5.2.2` \
+        xz-utils=5.2.2* `# xz=5.2.2` \
         yarn `# yarn=0.32` \
         zip=3.0* \
         zsh=5.4.2* && \
