@@ -20,7 +20,7 @@ RUN apk add --no-cache \
         emacs=26.3-r2 \
         file=5.37-r1 \
         gcc=9.2.0-r4 \
-        git~=2.24.2 \
+        git~=2.24.3 \
         go=1.13.4-r1 \
         gradle=5.6.4-r0 \
         httpie=1.0.3-r1 `# http=1.0.3` \
@@ -43,6 +43,7 @@ RUN apk add --no-cache \
         ruby=2.6.6-r2 `# gem=3.0.3` \
         ruby-bundler=2.0.2-r1 `# bundle=2.0.2` \
         ruby-bigdecimal ruby-json `# required for brew` \
+        ruby-rake=2.6.6-r2 `# rake=2.6.6` \
         subversion=1.12.2-r1 `# svn=1.12.2` \
         sudo=1.8.31-r0 \
         tree=1.8.0-r0 \

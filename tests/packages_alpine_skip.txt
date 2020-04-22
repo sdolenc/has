@@ -15,22 +15,22 @@ subl
 #  pinky, pr, ptx, runcon, stdbuf, tsort, users, vdir, who
 gnu_coreutils
 
-# building
+# currently building...
 aws
 lein
+rake ruby-rake=2.6.6-r2
 
 # todo: add to test container
 ag
 ant
 autojump
 eb
-
 perl6
-rake
 scala
 unar
 
 # runs best on alpine 3.8 or earlier, but we're using 3.11
+# todo: consider compiling for 3.11 by forking https://github.com/sgerrand/alpine-pkg-php5
 php5
 
 # installed on container (and has confirms), but
