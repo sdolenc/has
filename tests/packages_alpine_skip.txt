@@ -1,4 +1,4 @@
-# Not pre-installed to container, but repository cloned just-in-time during CI
+# Not pre-installed to container, but repository cloned during CI
 has
 
 # non-alpine packages

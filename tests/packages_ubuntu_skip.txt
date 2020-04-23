@@ -1,4 +1,4 @@
-# Not pre-installed to container, but repository cloned just-in-time during CI
+# Not pre-installed to container, but repository cloned during CI
 has
 
 # Tests are run as admin in CI. Code requires an extra paramater to get version as admin.
