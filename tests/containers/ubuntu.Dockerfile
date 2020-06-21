@@ -1,7 +1,7 @@
 FROM ubuntu:bionic-20200311
 
 # Updates path with node, npm, npx, and globally installed npm packages
-ENV node=12.18.1 `# npm=6.14.5`
+ENV node=12.18.1
 ENV PATH="${PATH}:/node-v${node}-linux-x64/bin"
 
 # already contains
@@ -136,7 +136,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     \
     curl -L "https://nodejs.org/dist/v${node}/node-v${node}-linux-x64.tar.gz" | tar xz && \
     \
-    npm install --global \
+    npm install --global `# npm=6.14.5` \
         brunch@"=3.0.0" \
         grunt-cli@"=1.3.2" \
         gulp-cli@"=2.2.0" \
