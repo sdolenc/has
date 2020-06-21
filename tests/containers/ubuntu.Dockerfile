@@ -1,5 +1,9 @@
 FROM ubuntu:bionic-20200311
 
+# Updates path with node, npm, npx, and globally installed npm packages
+ENV node=12.18.1 `# npm=6.14.5`
+ENV PATH="${PATH}:/node-v${node}-linux-x64/bin"
+
 # already contains
 #       apt=1.6.12
 #       apt-get=1.6.12
@@ -130,9 +134,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         sublime-text=3211 `# subl=3211` && \
     ln -s /usr/bin/php5.6 /usr/bin/php5 && \
     \
-    node=12.18.1 `# npm=6.14.5` && \
     curl -L "https://nodejs.org/dist/v${node}/node-v${node}-linux-x64.tar.gz" | tar xz && \
-    ln -s "/node-v${node}-linux-x64/bin/npm" /usr/local/bin/npm && \
     \
     npm install --global \
         brunch@"=3.0.0" \
@@ -143,6 +145,3 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
         serverless@"=1.67.3" `# sls=1.67.3` && \
     \
     apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
-
-# Updates path with node, npx, and globally installed npm packages
-ENV PATH="/node-v12.18.1-linux-x64/bin:${PATH}"
