@@ -38,6 +38,8 @@ $ echo $?
 
 ## Use `has` in scripts
 
+todo: quiet
+
 `has` can be used in shell scripts to check presence of tool in very readable way
 
 ```bash
