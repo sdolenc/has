@@ -132,6 +132,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     \
     node=12.18.1 `# npm=6.14.5` && \
     curl -L "https://nodejs.org/dist/v${node}/node-v${node}-linux-x64.tar.gz" | tar xz && \
+    ln -s "/node-v${node}-linux-x64/bin/npm" /usr/local/bin/npm && \
     \
     npm install --global \
         brunch@"=3.0.0" \
@@ -143,5 +144,5 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     \
     apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
-# Adds node, npm, npx, and globally instlal npm packages to path
+# Updates path with node, npx, and globally installed npm packages
 ENV PATH="/node-v12.18.1-linux-x64/bin:${PATH}"
