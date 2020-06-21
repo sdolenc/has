@@ -143,5 +143,5 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     \
     apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
-# Adds node, npm, npx, and globally instlal npm packages to path
+# Updates path with node, npm, npx, and globally installed npm packages
 ENV PATH="/node-v12.18.1-linux-x64/bin:${PATH}"
