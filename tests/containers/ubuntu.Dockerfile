@@ -126,7 +126,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     add-apt-repository -y "deb https://download.sublimetext.com/ apt/stable/" `#subl` && \
     apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-install-recommends -y -qq \
         golang-go=2:1.14* `# go=1.14.2` \
-        nodejs=12.16.2* `# node=12.16.2 # npm=6.14.4` \
+        nodejs=12.18.1* `# node=12.18.1 # npm=6.14.5` \
         php5.6=5.6.40* `# php5=5.6.40` \
         podman=1.6.2* \
         sublime-text=3211 `# subl=3211` && \
