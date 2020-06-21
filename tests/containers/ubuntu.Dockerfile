@@ -85,7 +85,7 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install --no-inst
     dpkg -i code_${code}.deb || apt-get install -f -y && \
     rm -f code_${code}.deb && \
     \
-    commit="102025c" `# eb=3.18.0` && \
+    commit="102025c" `# eb=3.18.1` && \
     curl -L "https://github.com/aws/aws-elastic-beanstalk-cli-setup/tarball/${commit}" | tar xz && \
     "aws-aws-elastic-beanstalk-cli-setup-${commit}/scripts/bundled_installer" && \
     ln -s /root/.ebcli-virtual-env/executables/eb /usr/local/bin/eb && \
